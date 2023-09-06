@@ -1,0 +1,29 @@
+.kategorien {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.kategorien-menu {
+  display: none; /* Hide the menu by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+
+.kategorien:hover .kategorien-menu {
+  display: block; /* Show the menu on hover */
+}
+
+.kategorien-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.kategorien-menu li:hover {
+  background-color: #e0e0e0;
+}
