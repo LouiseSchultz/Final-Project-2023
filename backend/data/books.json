@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "description": "Things without hurting fall apart",
+    "imageLink": "images/fairy-tales.jpg",
+    "category" : "romane"
+  },
+  {
+    "title": "Fairy tales",
+    "author": "Hans Christian Andersen",
+    "description": " beautiful Fairy tales",
+    "imageLink": "images/fairy-tales.jpg",
+    "category" : "lehrbücher"
+    }
+]
