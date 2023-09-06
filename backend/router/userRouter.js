@@ -6,13 +6,13 @@ import { test, registerUser, loginUser, getProfile, getAllProfiles } from '../co
 
 const userRouter = express.Router()
 
-// middleware
-userRouter.use(
-  cors({
-    credentials: true,
-    origin: 'http://localhost:3000/'
-  })
-)
+// // middleware
+// userRouter.use(
+//   cors({
+//     credentials: true,
+//     origin: 'http://localhost:3000/'
+//   })
+// )
 
 userRouter.get('/', test)
 userRouter.post('/register', registerUser)

@@ -11,17 +11,17 @@ const PORT = process.env.PORT || 6000
 const app = express()
 const connected = await connectMongoose()
 
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000', // Der Ursprung Ihrer Frontend-Anwendung
+    credentials: true,
+  }));
 
 app.use(express.json())
-app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
+app.use(cookieParser())
 
 app.use(bookRouter)
 app.use(userRouter)
-
-
-
 
 if(connected){
     app.listen(PORT, () => {
