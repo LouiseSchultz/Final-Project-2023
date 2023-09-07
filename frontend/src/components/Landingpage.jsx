@@ -1,9 +1,11 @@
 import React from 'react'
 
-function landingpage() {
+function Landingpage() {
   return (
-    <div>landingpage</div>
+    <div>
+      Landingpage
+    </div>
   )
 }
 
-export default landingpage
+export default Landingpage

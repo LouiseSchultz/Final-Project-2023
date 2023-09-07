@@ -29,7 +29,7 @@ function Register() {
         console.error(data.error)
       } else {
         setData({})
-        console.log('Login Successful. Welcome!')
+        console.log('Register Successful. Welcome!')
         navigate('/login')
       }
     } catch (error) {

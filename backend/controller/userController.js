@@ -10,13 +10,16 @@ export const test = (req,res) => {
 // Register Endpoint
 export const registerUser = async (req,res) => {
   try {
-    const {name, email, password} = req.body;
+    // const {vorName,nachName, email, password} = req.body;
+    const {vorName, nachName,strasse,hausNummer,postleitzahl,ort,telefon, email, password} = req.body;
     // Check if name was entered
-    if(!name) {
+    if(!vorName && nachName) {
       return res.json({
-        error: 'name is required'
+        error: 'Bitte vollständigen Name eingeben'
       })
     }
+
+
 
     // if password is good
     if(!password || password.length < 6) {
@@ -36,7 +39,13 @@ export const registerUser = async (req,res) => {
     const hashedPassword = await hashPassword(password)
     // Create user in database
     const user = await userModel.create({
-      name,
+      vorName,
+      nachName,
+      strasse,
+      hausNummer,
+      postleitzahl,
+      ort,
+      telefon,
       email,
       password: hashedPassword,
     })
@@ -98,6 +107,6 @@ export const getAllProfiles = async (req, res) => {
     res.json(users)
   } catch (error) {
     console.log(error)
-    res.json(error)
+    res.json()
   }
 }
