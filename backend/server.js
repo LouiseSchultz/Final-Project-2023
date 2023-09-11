@@ -20,6 +20,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 
+app.use('/images', express.static('images'))
+
 app.use(bookRouter)
 app.use(userRouter)
 

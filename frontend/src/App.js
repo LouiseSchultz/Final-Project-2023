@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 // import { Toaster } from 'react-hot-toast'
+import Books from "./components/Books";
 import Kategorien from "./components/Kategorien";
 import Register from "./components/Register";
 import Searchbar from "./components/Searchbar";
@@ -20,6 +21,7 @@ function App() {
       {" "}
       <Router>
         {" "}
+        <Books />
         <Searchbar placeholder="Enter a Book Name..." data={BookData} />
         <Navbar />
         <Routes>
