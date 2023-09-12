@@ -19,3 +19,18 @@ export const getBooks = async( req,res) => {
     res.send(`Bücher können nicht geladen werden`)
   }
 }
+
+
+// controller für Bild
+export const getBookImage = async (req, res) => {
+   const id = req.params.id;
+   //const title = req.params.title;
+
+   try {
+      const books = await bookModel.findById(title);
+      const imagePath = books.image;
+      res.sendFile(`./${imagePath}`);
+   } catch (error) {
+      res.send("books could not be found. " + error.message);
+   }
+}
