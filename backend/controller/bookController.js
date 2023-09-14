@@ -26,6 +26,22 @@ export const getBooks = async( req,res) => {
   }
 }
 
+export const searchBooksByTitle = async (req, res) => {
+  try {
+    const title = req.params.title;
+    const bookObj = await bookModel.find({ title: { $regex: new RegExp(title, 'i') } });
+    console.log(bookObj)
+    if (bookObj) {
+      res.json(bookObj);
+    } else {
+      res.json([]);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Nicht gefunden'});
+  }
+};
+
 // // Funktion zum Abrufen von Büchern von der Google Books API
 // export const getBooksApi = async (req, res) => {
 //   try {

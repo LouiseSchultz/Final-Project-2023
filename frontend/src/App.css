@@ -1,0 +1,66 @@
+.active {
+  background: lightgray;
+}
+/* Stil für das äußere Container-Div */
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Stil für das Eingabefeld */
+.searchInputs input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Stil für die Dropdown-Liste der Vorschläge */
+.suggestions {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Stil für die einzelnen Vorschläge */
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Stil für den ausgewählten Vorschlag */
+.suggestions li.active {
+  background-color: #f2f2f2;
+}
+
+/* Stil für den Bereich des ausgewählten Buchs */
+.selectedBook {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Stil für den Zurück zur Suche-Button */
+.selectedBook button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Stil für den Zurück zur Suche-Button im Hover-Zustand */
+.selectedBook button:hover {
+  background-color: #0056b3;
+}

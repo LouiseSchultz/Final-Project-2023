@@ -1,27 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../App.css";
 
-
-function SearchBar({ placeholder, data }) {
+function Searchbar({ placeholder }) {
+  const [suggestions, setSuggestions] = useState([]);
+  const [suggestionIndex, setSuggestionIndex] = useState(0);
+  const [suggestionsActive, setSuggestionsActive] = useState(false);
+  const [value, setValue] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
+  const [selectedBook, setSelectedBook] = useState(null);
 
-  const handleFilter = (event) => {
-    const searchWord = event.target.value;
-    setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
-      return value.title.toLowerCase().startsWith(searchWord.toLowerCase());
-    });
-
-    if (searchWord === "") {
-      setFilteredData([]);
+  useEffect(() => {
+    if (value.length > 1) {
+      // API-Anfrage an das Backend, um Bücher abzurufen
+      axios.get(`/books/search/${value}`)
+        .then((response) => {
+          setFilteredData(response.data);
+          setSuggestions(response.data.map((book) => book.title));
+          setSuggestionsActive(true);
+        })
+        .catch((error) => {
+          console.error('Fehler beim Abrufen der Bücher:', error);
+        });
     } else {
-      setFilteredData(newFilter);
+      setFilteredData([]);
+      setSuggestions([]);
+      setSuggestionsActive(false);
+    }
+  }, [value]);
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 38) {
+      // UP ARROW
+      if (suggestionIndex > 0) {
+        setSuggestionIndex(suggestionIndex - 1);
+      }
+    } else if (e.keyCode === 40) {
+      // DOWN ARROW
+      if (suggestionIndex < suggestions.length - 1) {
+        setSuggestionIndex(suggestionIndex + 1);
+      }
+    } else if (e.keyCode === 13) {
+      // ENTER
+      if (suggestions.length > 0) {
+        setValue(suggestions[suggestionIndex]);
+        setSuggestions([]);
+        setSuggestionsActive(false);
+        setSelectedBook(filteredData[suggestionIndex]);
+      }
     }
   };
 
+  const selectBook = (book) => {
+    setValue(book.title);
+    setSelectedBook(book);
+    setSuggestions([]);
+    setSuggestionsActive(false);
+  };
+
   const clearInput = () => {
+    setValue("");
     setFilteredData([]);
-    setWordEntered("");
+    setSelectedBook(null);
+    setSuggestions([]);
+    setSuggestionsActive(false);
   };
 
   return (
@@ -30,24 +76,33 @@ function SearchBar({ placeholder, data }) {
         <input
           type="text"
           placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
-       
+        {suggestionsActive && (
+          <ul className="suggestions">
+            {suggestions.map((suggestion, index) => (
+              <li
+                className={index === suggestionIndex ? "active" : ""}
+                key={index}
+                onClick={() => selectBook(filteredData[index])}
+              >
+                {suggestion}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {filteredData.length != 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <a className="dataItem" href={value.link} target="_blank">
-                <p>{value.title} </p>
-              </a>
-            );
-          })}
+      {selectedBook && (
+        <div className="selectedBook">
+          <h2>{selectedBook.title}</h2>
+          {/* Weitere Buchinformationen anzeigen */}
+          <button onClick={clearInput}>Zurück zur Suche</button>
         </div>
       )}
     </div>
   );
 }
 
-export default SearchBar;
+export default Searchbar;
