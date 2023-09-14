@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Page</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS for the warm orange-brown color scheme -->
+    <style>
+        body {
+            background-color: #F5E5CC;
+        }
+        .bg-primary {
+            background-color: #FFA500; /* Warm Orange */
+        }
+        .text-primary {
+            color: #FFA500;
+        }
+        .btn-primary {
+            background-color: #FFA500;
+        }
+        .input-primary {
+            border-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="login" class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-center text-primary mb-6">Login</h2>
+            <form onsubmit="loginSubmit(event);">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+                    <input type="text" id="login-username" name="username" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+                    <input type="password" id="login-password" name="password" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit" class="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Login</button>
+                    <a href="#registration" class="text-primary hover:underline">Register</a>
+                </div>
+                <p class="text-gray-600 text-center">Don't have an account? <a href="#registration" class="text-primary hover:underline">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <div id="registration" class="hidden min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-center text-primary mb-6">Register</h2>
+            <form onsubmit="registerSubmit(event);">
+                <div class="mb-4">
+                    <label for="fullname" class="block text-sm font-medium text-gray-600">Full Name</label>
+                    <input type="text" id="register-fullname" name="fullname" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+                    <input type="email" id="register-email" name="email" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="mb-4">
+                    <label for="newpassword" class="block text-sm font-medium text-gray-600">Password</label>
+                    <input type="password" id="register-newpassword" name="newpassword" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="mb-4">
+                    <label for="confirmpassword" class="block text-sm font-medium text-gray-600">Confirm Password</label>
+                    <input type="password" id="register-confirmpassword" name="confirmpassword" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit" class="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Register</button>
+                    <a href="#login" class="text-primary hover:underline">Login</a>
+                </div>
+                <p class="text-gray-600 text-center">Already have an account? <a href="#login" class="text-primary hover:underline">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toggle between Login and Registration Sections -->
+    <script>
+        function loginSubmit(event) {
+            event.preventDefault();
+            // Add your login form submission logic here
+            // For example, you can use JavaScript to send a request to your server
+            // and handle the login process.
+            console.log("Login form submitted");
+        }
+
+        function registerSubmit(event) {
+            event.preventDefault();
+            // Add your registration form submission logic here
+            // For example, you can use JavaScript to send a request to your server
+            // and handle the registration process.
+            console.log("Registration form submitted");
+        }
+
+        function toggleSections() {
+            const loginSection = document.getElementById('login');
+            const registrationSection = document.getElementById('registration');
+
+            if (loginSection && registrationSection) {
+                loginSection.classList.toggle('hidden');
+                registrationSection.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
