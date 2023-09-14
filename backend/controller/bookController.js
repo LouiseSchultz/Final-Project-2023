@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { bookModel } from "../models/bookModel.js";
-import axios from 'axios'
+//import axios from 'axios'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,6 +25,47 @@ export const getBooks = async( req,res) => {
     res.send(`Bücher können nicht geladen werden`)
   }
 }
+
+
+/*export const searchBooksByTitle = async (req, res) => {
+  try {
+    const title = req.query.title;
+    const books = await bookModel.find({ title: { $regex: title, $options: 'i' } });
+    res.send(books);
+  } catch (error) {
+    res.send("Buch nicht gefunden. " + error.message);
+  }
+}*/
+
+export const searchBooksByTitle = async (req, res) => {
+  try {
+    const title = req.params.title; // Récupérez le titre à partir du paramètre de requête 'title'
+    
+    // Effectuez une recherche dans la base de données pour les livres dont le titre correspond au terme de recherche (en ignorant la casse)
+    const bookObj = await bookModel.find({ title: { $regex: new RegExp(title, 'i') } });
+    console.log(bookObj)
+    // Vérifiez si des livres ont été trouvés
+    if (bookObj) {
+      res.json(bookObj);
+    } else {
+      res.json([]);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Une erreur s\'est produite lors de la recherche de livres par titre.' });
+  }
+};
+
+
+
+/*export const getSingleBook = async (req, res) => {
+  try {
+     const book = await bookModel.findById(req.params.id);
+     res.send(book);
+  } catch (error) {
+     res.send("book could not be found. " + error.message);
+  }
+}*/
 
 // // Funktion zum Abrufen von Büchern von der Google Books API
 // export const getBooksApi = async (req, res) => {
