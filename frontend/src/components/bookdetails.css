@@ -1,0 +1,43 @@
+/* Add this CSS to your stylesheet or a style tag in your component */
+/* Add this CSS to your stylesheet or a style tag in your component */
+.book-details {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.book-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.book-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.book-author {
+    font-size: 12px;
+}
+
+.book-price {
+  font-size: 18px;
+  color: #007bff; /* Blue color for the price */
+}
+
+.book-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

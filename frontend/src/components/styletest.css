@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(209,204,204);
+}
+.templateContainer{
+    margin: 5% 0;
+}
+.templateContainer > .searchInput_Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.templateContainer > .searchInput_Container input{
+    width: 50%;
+    padding: 10px;
+    outline: none;
+}
+/* styletest.css */
+
+/* Container for the dropdown menu */
+.templateContainer {
+  position: relative;
+}
+
+/* Style for the input field */
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Style for the dropdown menu */
+.template_Container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px; /* Set a maximum height for the dropdown */
+  overflow-y: auto; /* Enable scrolling if the dropdown overflows */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for individual items in the dropdown */
+.template {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Style for the selected item in the dropdown (optional) */
+.template:hover {
+  background-color: #f2f2f2;
+}

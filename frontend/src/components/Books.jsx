@@ -23,7 +23,7 @@ function Books() {
 
   return (
     <section>
-      <h1>Buchliste</h1>
+      {/* <h1>Buchliste</h1>
       {loading ? (
         <p>Lade Bücher...</p>
       ) : (
@@ -31,23 +31,23 @@ function Books() {
           {books.map((book, index) => (
             <li key={index}>
               <div>
-                <img
+                {/* <img
                   alt={`${book.title} book`}
                   src={`http://localhost:5000${book.image}`} // Hier den Pfad zum Bild anpassen
                 />
-                {/* {console.log(book.images.url)} */}
-                <div>
-                  <h3>{book.title}</h3>
-                  <p>Autor: {book.author}</p>
-                  <p>Beschreibung: {book.description}</p>
-                  <p>Kategorie: {book.category}</p>
-                </div>
-              </div>
-              <hr />
-            </li>
-          ))}
-        </ul>
-      )}
+      //           {/* {console.log(book.images.url)} */}
+      {/* //           <div>
+      //             <h3>{book.title}</h3>
+      //             <p>Autor: {book.author}</p>
+      //             <p>Beschreibung: {book.description}</p>
+      //             <p>Kategorie: {book.category}</p>
+      //           </div> 
+      //         </div> */}
+      {/* //         <hr />
+      //       </li> */}
+      {/* //     ))}
+      //   </ul> */}
+      {/* // )} */} 
     </section>
   );
 }
