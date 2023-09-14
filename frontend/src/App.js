@@ -31,7 +31,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/warenkorb" element={<Warenkorb />} />
           {/* <Toaster position='bottom-right' toastOptions={{duration: 2000}} /> */}
-        </Routes>        <Searchbar placeholder="Enter a Book Name..." data={BookData} />
+        </Routes>       
+        
+         {/* <Searchbar placeholder="Enter a Book Name..." data={BookData} /> */}
 
       </Router>
     </>
