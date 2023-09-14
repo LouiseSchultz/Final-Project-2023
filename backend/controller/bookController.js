@@ -1,4 +1,10 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { bookModel } from "../models/bookModel.js";
+import axios from 'axios'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // create new book
 export const newBook = async(req,res, next) => {
@@ -20,17 +26,36 @@ export const getBooks = async( req,res) => {
   }
 }
 
+// // Funktion zum Abrufen von Büchern von der Google Books API
+// export const getBooksApi = async (req, res) => {
+//   try {
+//     const searchTerm = req.query.q; // Der Suchbegriff aus der Anfrage des Frontends
 
-// controller für Bild
-export const getBookImage = async (req, res) => {
-   const id = req.params.id;
-   //const title = req.params.title;
+//     // Senden Sie die Anfrage an die Google Books API
+//     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`);
+    
+//     // Senden Sie die Daten von Google Books API als Antwort an Ihr Frontend
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error('Fehler beim Abrufen der Bücher:', error);
+//     res.status(500).json({ error: 'Ein Fehler ist aufgetreten' });
+//   }
+// };
 
-   try {
-      const books = await bookModel.findById(title);
-      const imagePath = books.image;
-      res.sendFile(`./${imagePath}`);
-   } catch (error) {
-      res.send("books could not be found. " + error.message);
-   }
-}
+
+// export const getBookImage = async (req, res) => {
+//   // const id = req.params.id;
+//   const title = req.params.title;
+//   try {
+//     const book = await bookModel.findOne({ title: title });
+//     if (!book) {
+//        return res.status(404).send("Buch nicht gefunden");
+//     }
+
+//     const imagePath = path.join(__dirname, '..', 'images', book.image); // Adjust the path here
+
+//     res.sendFile(imagePath)
+//  } catch (error) {
+//     res.status(500).send("Es gab einen Fehler " + error.message);
+//  }
+// }
