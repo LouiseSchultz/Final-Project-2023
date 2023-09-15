@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import "./styletest.css";
+// import "./styletest.css";
 import data from "../Data.json";
 import BookDetails from "./BookDetails"; // Import the BookDetails component
 
@@ -22,6 +22,7 @@ function SearchBar() {
             id="searchInput"
             type="text"
             placeholder="Search here..."
+            className="border-2 border-primary bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none search-input"
             value={searchTerm} // Use value instead of onChange
             onChange={(event) => {
               setSearchTerm(event.target.value);
@@ -32,7 +33,9 @@ function SearchBar() {
           {searchTerm !== "" &&
             data
               .filter((val) => {
-                return val.title.toLowerCase().startsWith(searchTerm.toLowerCase());
+                return val.title
+                  .toLowerCase()
+                  .startsWith(searchTerm.toLowerCase());
               })
               .map((val) => {
                 return (
@@ -59,55 +62,3 @@ export default SearchBar;
 
 
 
-// import React, { useState } from "react";
-
-// function SearchBar({ placeholder, data }) {
-//   const [filteredData, setFilteredData] = useState([]);
-//   const [wordEntered, setWordEntered] = useState("");
-
-//   const handleFilter = (event) => {
-//     const searchWord = event.target.value;
-//     setWordEntered(searchWord);
-//     const newFilter = data.filter((value) => {
-//       return value.title.toLowerCase().startsWith(searchWord.toLowerCase());
-//     });
-
-//     if (searchWord === "") {
-//       setFilteredData([]);
-//     } else {
-//       setFilteredData(newFilter);
-//     }
-//   };
-
-//   const clearInput = () => {
-//     setFilteredData([]);
-//     setWordEntered("");
-//   };
-
-//   return (
-//     <div className="search">
-//       <div className="searchInputs">
-//         <input
-//           type="text"
-//           placeholder={placeholder}
-//           value={wordEntered}
-//           onChange={handleFilter}
-//         />
-
-//       </div>
-//       {filteredData.length !== 0 && (
-//         <div className="dataResult">
-//           {filteredData.slice(0, 15).map((value, key) => {
-//             return (
-//               <a className="dataItem" href={value.link} target="_blank">
-//                 <p>{value.title} </p>
-//               </a>
-//             );
-//           })}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default SearchBar;
