@@ -75,8 +75,8 @@ function Register() {
     vorName: '',
     nachName: '',
     strasse: '',
-    hausNummer: 0,
-    postleitzahl: 0,
+    hausNummer: "",
+    postleitzahl: "",
     ort: '',
     telefon: 0,
     email: '',
@@ -170,7 +170,7 @@ function Register() {
               Hausnummer
             </label>
             <input
-              type="number"
+              type="text"
               id="hausNummer"
               placeholder="Hausnummer"
               value={data.hausNummer}
@@ -183,7 +183,7 @@ function Register() {
               PLZ
             </label>
             <input
-              type="number"
+              type="text"
               id="postleitzahl"
               placeholder="PLZ"
               value={data.postleitzahl}
