@@ -74,9 +74,10 @@ function LoginForm() {
     // </div>
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-3xl font-semibold text-center text-primary mb-6">
+        <h2 className="text-3xl font-semibold text-center text-primary mb-6" >
           Login
         </h2>
+        <button className="btn btn-accent">Primary</button>
         <form onSubmit={handleLoginSubmit} className="form">
           <div className="mb-4">
             <label
