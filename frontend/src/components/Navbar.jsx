@@ -25,9 +25,9 @@ function NavBar() {
     <>
       <nav className="bg-primary py-4">
         <div className="container mx-auto flex justify-between items-center">
-                    <ul className="flex space-x-6 text-white">
-
-          <Link to="/"> Your Bookstore</Link> </ul>
+          <Link to={'/'} className="text-white text-2xl font-semibold">
+            Your Bookstore
+          </Link>
           <form className="relative">
             <SearchBar allBooks={allBooks} />
             {/* <input
