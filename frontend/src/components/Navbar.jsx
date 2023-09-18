@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import Kategorien from "./Kategorien.jsx";
@@ -6,6 +6,22 @@ import SearchBar from "./Searchbar.jsx"
 import Warenkorb from "./Warenkorb";
 
 function NavBar() {
+  const [allBooks, setAllBooks] = useState([])
+  useEffect(() => {
+    loadAllBooks()
+  }, [])
+
+  const loadAllBooks = async ()=>{
+    try {
+      const data = await fetch("http://localhost:5000/books")
+      const res = await data.json()
+      setAllBooks(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+
   return (
     <>
       <nav className="bg-primary py-4">
@@ -14,7 +30,7 @@ function NavBar() {
             Your Bookstore
           </a>
           <form className="relative">
-            <SearchBar />
+            <SearchBar allBooks={allBooks}/>
             {/* <input
               type="search"
               name="search"
