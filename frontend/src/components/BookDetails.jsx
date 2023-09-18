@@ -32,7 +32,7 @@ function BookDetails() {
       <p className="book-author">{book.author}</p>
       <p className="book-description">{book.description}</p>
       <p className="book-price">Preis: {book.price} Euro</p>
-      <img className="book-image" src={book.image} alt={book.title} />
+      <img src={`http://localhost:5000${book.image}`} alt={`${book.title} book`} className="rounded-xl" />
       {/* Hier die Schaltfläche oder Logik zum Hinzufügen zum Warenkorb hinzufügen */}
     </div>
   );

@@ -34,7 +34,7 @@ function Books() {
                 <img src={`http://localhost:5000${book.image}`} alt={`${book.title} book`} className="rounded-xl" />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title text-white">
+                <h2 className="card-title text-primary">
                   {book.title}
                   <div className="badge badge-secondary text-xs">{book.category}</div>
                 </h2>
