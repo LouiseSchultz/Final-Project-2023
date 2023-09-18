@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 function Landingpage() {
   return (
@@ -10,7 +11,7 @@ function Landingpage() {
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-extrabold mb-4">Discover Your Next Favorite Book</h1>
           <p className="text-lg mb-8">Explore a world of literature with us.</p>
-          <a href="#" className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">Explore Now</a>
+          <Link to="/books" className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">Explore Now</Link>
         </div>
       </section>
 
