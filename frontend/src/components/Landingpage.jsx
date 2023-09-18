@@ -10,11 +10,9 @@ function Landingpage() {
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-extrabold mb-4">Discover Your Next Favorite Book</h1>
           <p className="text-lg mb-8">Explore a world of literature with us.</p>
-          <a href="#" className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">Explore Now</a>
         </div>
       </section>
 
-      {/* Categories Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-extrabold mb-8">Categories</h2>
@@ -26,7 +24,6 @@ function Landingpage() {
               <div className="p-4">
                 <h3 className="text-2xl font-semibold text-primary">Romantic</h3>
                 <div className="mt-4">
-                  <a href="#" className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Explore</a>
                 </div>
               </div>
             </div>
@@ -37,7 +34,6 @@ function Landingpage() {
               <div className="p-4">
                 <h3 className="text-2xl font-semibold text-primary">Cooking</h3>
                 <div className="mt-4">
-                  <a href="#" className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Explore</a>
                 </div>
               </div>
             </div>
@@ -46,9 +42,8 @@ function Landingpage() {
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img src="kids-category-image.jpg" alt="Kids Category" className="w-full h-56 object-cover" />
               <div className="p-4">
-                <h3 className="text-2xl font-semibold text-primary">Kids</h3>
+                <h3 className="text-2xl font-semibold text-secondary">Kids</h3>
                 <div className="mt-4">
-                  <a href="#" className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Explore</a>
                 </div>
               </div>
             </div>
@@ -59,7 +54,6 @@ function Landingpage() {
               <div className="p-4">
                 <h3 className="text-2xl font-semibold text-primary">Study</h3>
                 <div className="mt-4">
-                  <a href="#" className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Explore</a>
                 </div>
               </div>
             </div>
@@ -73,7 +67,6 @@ function Landingpage() {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-extrabold mb-8">Contact Us</h2>
           <p className="text-gray-700 mb-8">Have questions or suggestions? Feel free to reach out to us.</p>
-          <a href="#" className="btn-primary text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">Contact Now</a>
         </div>
       </section>
 

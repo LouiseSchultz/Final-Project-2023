@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import BookData from "./Data.json";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Warenkorb from "./components/Warenkorb";
 
 axios.defaults.baseURL = 'http://localhost:5000'
 axios.defaults.withCredentials = true
@@ -25,6 +26,8 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Landingpage />} />
+          <Route path="/warenkorb" element={<Warenkorb />} />
+
           <Route path="/kategorien" element={<Kategorien />} />
           <Route path="/login" element={<Login />} />
         </Routes>
