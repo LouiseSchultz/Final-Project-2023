@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasse - Your Bookstore</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS for the warm orange-brown color scheme -->
+    <style>
+        body {
+            background-color: #F5E5CC;
+        }
+        .bg-primary {
+            background-color: #FFA500; /* Warm Orange */
+        }
+        .text-primary {
+            color: #FFA500;
+        }
+        .btn-primary {
+            background-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar with Search Bar and Login Option -->
+    <nav class="bg-primary py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-semibold">Your Bookstore</a>
+            <form class="relative">
+                <input type="search" name="search" placeholder="Search for books" class="border-2 border-primary bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none search-input" />
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="text-primary h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 21l-4.35-4.35"></path>
+                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                    </svg>
+                </button>
+            </form>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">Books</a></li>
+                <li><a href="#" class="hover:text-gray-300">Authors</a></li>
+                <!-- Add the "Login" link to the navbar -->
+                <li><a href="#login" class="hover:text-gray-300">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Kasse Section -->
+    <section class="bg-secondary py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8">Kasse</h2>
+            <!-- Lieferadresse und Zahlungsinformationen -->
+            <div class="bg-white shadow-md rounded-md overflow-hidden p-6 mb-8">
+                <h3 class="text-xl font-semibold mb-4">Lieferadresse</h3>
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-600 text-sm font-medium mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="block text-gray-600 text-sm font-medium mb-1">Adresse</label>
+                        <input type="text" id="address" name="address" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="city" class="block text-gray-600 text-sm font-medium mb-1">Stadt</label>
+                        <input type="text" id="city" name="city" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="zip" class="block text-gray-600 text-sm font-medium mb-1">PLZ</label>
+                        <input type="text" id="zip" name="zip" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="country" class="block text-gray-600 text-sm font-medium mb-1">Land</label>
+                        <input type="text" id="country" name="country" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white shadow-md rounded-md overflow-hidden p-6">
+                <h3 class="text-xl font-semibold mb-4">Zahlungsinformationen</h3>
+                <form>
+                    <div class="mb-4">
+                        <label for="card" class="block text-gray-600 text-sm font-medium mb-1">Kreditkarte</label>
+                        <input type="text" id="card" name="card" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="expiration" class="block text-gray-600 text-sm font-medium mb-1">Ablaufdatum</label>
+                        <input type="text" id="expiration" name="expiration" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                    <div class="mb-4">
+                        <label for="cvv" class="block text-gray-600 text-sm font-medium mb-1">CVV</label>
+                        <input type="text" id="cvv" name="cvv" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Bestellzusammenfassung -->
+            <div class="bg-white shadow-md rounded-md overflow-hidden p-6 mt-8">
+                <h3 class="text-xl font-semibold mb-4">Bestellzusammenfassung</h3>
+                <!-- Produkt 1 -->
+                <div class="flex mb-4">
+                    <div class="w-1/4">
+                        <img src="book1.jpg" alt="Book Title" class="w-full h-16 object-cover">
+                    </div>
+                    <div class="w-3/4 px-4">
+                        <h4 class="text-lg font-semibold">Buch 1</h4>
+                        <p class="text-gray-600">Autor 1</p>
+                        <p class="text-gray-600">Preis: $20.00</p>
+                    </div>
+                </div>
+                <!-- Produkt 2 -->
+                <div class="flex mb-4">
+                    <div class="w-1/4">
+                        <img src="book2.jpg" alt="Book Title" class="w-full h-16 object-cover">
+                    </div>
+                    <div class="w-3/4 px-4">
+                        <h4 class="text-lg font-semibold">Buch 2</h4>
+                        <p class="text-gray-600">Autor 2</p>
+                        <p class="text-gray-600">Preis: $25.00</p>
+                    </div>
+                </div>
+                <!-- Gesamtsumme -->
+                <div class="flex justify-between">
+                    <p class="text-gray-600">Gesamtsumme:</p>
+                    <p class="text-primary">$45.00</p>
+                </div>
+                <!-- Bestellung abschicken -->
+                <div class="mt-8 text-center">
+                    <button type="submit" class="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Bestellung abschicken</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Your Bookstore. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

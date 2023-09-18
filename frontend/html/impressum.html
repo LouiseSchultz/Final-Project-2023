@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Your Bookstore</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS for the warm orange-brown color scheme -->
+    <style>
+        body {
+            background-color: #F5E5CC;
+        }
+        .bg-primary {
+            background-color: #FFA500; /* Warm Orange */
+        }
+        .text-primary {
+            color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar with Search Bar and Login Option -->
+    <nav class="bg-primary py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-semibold">Your Bookstore</a>
+            <form class="relative">
+                <input type="search" name="search" placeholder="Search for books" class="border-2 border-primary bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none search-input" />
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="text-primary h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 21l-4.35-4.35"></path>
+                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                    </svg>
+                </button>
+            </form>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">Books</a></li>
+                <li><a href="#" class="hover:text-gray-300">Authors</a></li>
+                <!-- Add the "Login" link to the navbar -->
+                <li><a href="#login" class="hover:text-gray-300">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Impressum Section -->
+    <section class="bg-secondary py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-8">Impressum</h2>
+            <p class="text-gray-600">Your Bookstore</p>
+            <p class="text-gray-600">Musterstraße 123</p>
+            <p class="text-gray-600">12345 Musterstadt</p>
+            <p class="text-gray-600">Telefon: +49 123 456789</p>
+            <p class="text-gray-600">E-Mail: info@yourbookstore.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Your Bookstore. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

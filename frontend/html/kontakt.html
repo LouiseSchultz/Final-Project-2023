@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Your Bookstore</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Daisy UI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.8.3/dist/full.css" rel="stylesheet">
+    <!-- Custom CSS for the warm orange-brown color scheme -->
+    <style>
+        body {
+            background-color: #F5E5CC;
+        }
+        .bg-secondary {
+            background-color: #F5E5CC;
+        }
+        .bg-primary {
+            background-color: #FFA500; /* Warm Orange */
+        }
+        .text-primary {
+            color: #FFA500;
+        }
+        .btn-primary {
+            background-color: #FFA500;
+        }
+        .search-input {
+            border-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar with Search Bar and Login Option -->
+    <nav class="bg-primary py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-semibold">Your Bookstore</a>
+            <form class="relative">
+                <input type="search" name="search" placeholder="Search for books" class="border-2 border-primary bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none search-input" />
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="text-primary h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 21l-4.35-4.35"></path>
+                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                    </svg>
+                </button>
+            </form>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">Books</a></li>
+                <li><a href="#" class="hover:text-gray-300">Authors</a></li>
+                <!-- Add the "Login" link to the navbar -->
+                <li><a href="#login" class="hover:text-gray-300">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Kontakt Section with Contact Form and Image -->
+    <section class="bg-secondary py-16">
+        <div class="container mx-auto text-center">
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <!-- Bild -->
+                <img src="https://cdn.pixabay.com/photo/2019/07/03/05/58/envelope-4313721_640.png" alt="Kontaktbild" class="w-full md:w-1/2 rounded-lg shadow-lg object-cover" />
+
+                <!-- Kontaktformular Container -->
+                <div class="max-w-lg mx-auto md:w-1/2 md:ml-4">
+                    <h2 class="text-3xl font-extrabold mb-8">Kontaktiere Uns</h2>
+                    <!-- Kontaktformular -->
+                    <form class="mb-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-600 text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-600 text-sm font-medium mb-1">E-Mail</label>
+                            <input type="email" id="email" name="email" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-600 text-sm font-medium mb-1">Nachricht</label>
+                            <textarea id="message" name="message" rows="4" class="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800"></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <button type="submit" class="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">Absenden</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Your Bookstore. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>
