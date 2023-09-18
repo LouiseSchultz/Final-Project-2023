@@ -4,30 +4,30 @@ module.exports = {
   theme: {
     extend: {},
   },
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#78716c",
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       mytheme: {
+  //         primary: "#78716c",
 
-          secondary: "#a16207",
+  //         secondary: "#a16207",
 
-          accent: "#9a3412",
+  //         accent: "#9a3412",
 
-          neutral: "#2b3440",
+  //         neutral: "#2b3440",
 
-          "base-100": "#ffffff",
+  //         "base-100": "#ffffff",
 
-          info: "#d97706",
+  //         info: "#d97706",
 
-          success: "#3f6212",
+  //         success: "#3f6212",
 
-          warning: "#0f766e",
+  //         warning: "#0f766e",
 
-          error: "#881337",
-        },
-      },
-    ],
-  },
+  //         error: "#881337",
+  //       },
+  //     },
+  //   ],
+  // },
   plugins: [require("daisyui")],
 };

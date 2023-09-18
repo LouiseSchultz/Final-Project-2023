@@ -21,8 +21,8 @@ function App() {
       {" "}
       <Router>
         {" "}
-        <Books />
         <Navbar />
+        <Books />
         <Routes>
           <Route path="/register" element={<Register />} />
 

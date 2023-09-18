@@ -71,21 +71,21 @@ function NavBar() {
           </ul>
         </div>
       </nav>
+      </>
 
-      <div className="navbar">
-        <div className="navbar-container">
-          <p>
-            <Link to="/">home</Link>
-          </p>
-          <p> {/* <Kategorien /> */}</p>
-          <p>{/* <Link to="/login">Login</Link> */}</p>
-          <p>
-            {" "}
-            <Link to="/warenkorb">Warenkorb</Link>
-          </p>
-        </div>
-      </div>
-    </>
+      // {/* <div className="navbar">
+      //   <div className="navbar-container">
+      //     <p>
+      //       <Link to="/">home</Link>
+      //     </p>
+      //     <p> {/* <Kategorien /> */}</p>
+      //   //   <p>{/* <Link to="/login">Login</Link> */}</p>
+      //   //   <p>
+      //   //     {" "}
+      //   //     <Link to="/warenkorb">Warenkorb</Link>
+      //   //   </p>
+      //   // </div> */}
+      // // </div>
   );
 }
 

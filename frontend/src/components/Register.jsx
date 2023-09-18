@@ -209,7 +209,7 @@ function Register() {
               Telefonnummer
             </label>
             <input
-              type="number"
+              type="text"
               id="telefon"
               placeholder="Telefonnummer"
               value={data.telefon}
