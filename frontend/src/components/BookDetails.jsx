@@ -1,5 +1,4 @@
 import React from "react";
-import "./bookdetails.css"; // You can create this CSS file for styling
 
 function BookDetails({ book }) {
   return (

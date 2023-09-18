@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 import Kategorien from "./Kategorien.jsx";
 import SearchBar from "./Searchbar.jsx"
+import Warenkorb from "./Warenkorb";
 
 function NavBar() {
   return (
@@ -36,11 +37,7 @@ function NavBar() {
             </button>
           </form>
           <ul className="flex space-x-6 text-white">
-            <li>
-              <a href="#" className="hover:text-gray-300">
-                Home
-              </a>
-            </li>
+            <li>Home</li>
             <li>
               <Kategorien />
             </li>
@@ -48,27 +45,13 @@ function NavBar() {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">
-                Contact
-              </a>
+              <Link to="/warenkorb">
+                <Warenkorb />
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
-
-      <div className="navbar">
-        <div className="navbar-container">
-          <p>
-            <Link to="/">home</Link>
-          </p>
-          <p> {/* <Kategorien /> */}</p>
-          <p>{/* <Link to="/login">Login</Link> */}</p>
-          <p>
-            {" "}
-            <Link to="/warenkorb">Warenkorb</Link>
-          </p>
-        </div>
-      </div>
     </>
   );
 }
