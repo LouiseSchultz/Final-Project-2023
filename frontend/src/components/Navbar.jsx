@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import Kategorien from "./Kategorien.jsx";
 import SearchBar from "./Searchbar.jsx"
+import Warenkorb from "./Warenkorb";
 
 function NavBar() {
+  const [allBooks, setAllBooks] = useState([])
+  useEffect(() => {
+    loadAllBooks()
+  }, [])
+
+  const loadAllBooks = async ()=>{
+    try {
+      const data = await fetch("http://localhost:5000/books")
+      const res = await data.json()
+      setAllBooks(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+
   return (
     <>
       <nav className="bg-primary py-4">
@@ -13,7 +30,7 @@ function NavBar() {
             Your Bookstore
           </a>
           <form className="relative">
-            <SearchBar />
+            <SearchBar allBooks={allBooks}/>
             {/* <input
               type="search"
               name="search"
@@ -36,11 +53,7 @@ function NavBar() {
             </button>
           </form>
           <ul className="flex space-x-6 text-white">
-            <li>
-              <a href="#" className="hover:text-gray-300">
-                Home
-              </a>
-            </li>
+            <li>Home</li>
             <li>
               <Kategorien />
             </li>
@@ -48,27 +61,13 @@ function NavBar() {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">
-                Contact
-              </a>
+              <Link to="/warenkorb">
+                <Warenkorb />
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
-
-      <div className="navbar">
-        <div className="navbar-container">
-          <p>
-            <Link to="/">home</Link>
-          </p>
-          <p> {/* <Kategorien /> */}</p>
-          <p>{/* <Link to="/login">Login</Link> */}</p>
-          <p>
-            {" "}
-            <Link to="/warenkorb">Warenkorb</Link>
-          </p>
-        </div>
-      </div>
     </>
   );
 }

@@ -8,24 +8,18 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#ffa500",
+            "primary": "#ffa500",
+            "secondary": "#f5e5cc",
+            "accent": "#ca8a04",
+            "neutral": "#eab308",
+            "base-100": "#ffffff",
+            "info": "#fef3c7",
+            "success": "#fed7aa",
+            "warning": "#fbbd23",
+            "error": "#d97706",
+          },
+        
 
-          secondary: "#a16207",
-
-          accent: "#9a3412",
-
-          neutral: "#2b3440",
-
-          "base-100": "#ffffff",
-
-          info: "#d97706",
-
-          success: "#3f6212",
-
-          warning: "#0f766e",
-
-          error: "#881337",
-        },
       },
     ],
   },
