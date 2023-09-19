@@ -26,6 +26,15 @@ export const getBooks = async( req,res) => {
   }
 }
 
+export const getBookById = async (req, res) => {
+  try {
+    const book = await bookModel.findById(req.params.id)
+    res.send(book)
+  } catch (error) {
+    res.send(`Buch koonte nicht geladen werden ${error.message}` );
+  }
+}
+
 // // Funktion zum Abrufen von Büchern von der Google Books API
 // export const getBooksApi = async (req, res) => {
 //   try {
