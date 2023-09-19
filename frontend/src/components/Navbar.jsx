@@ -24,6 +24,7 @@ function NavBar() {
 
   return (
     <>
+   
       <nav className="bg-primary py-4">
         <div className="container mx-auto flex justify-between items-center">
           <a href="#" className="text-white text-2xl font-semibold">
@@ -61,9 +62,7 @@ function NavBar() {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/warenkorb">
-                <Warenkorb />
-              </Link>
+              <Link to="/warenkorb"><Warenkorb/></Link>
             </li>
           </ul>
         </div>

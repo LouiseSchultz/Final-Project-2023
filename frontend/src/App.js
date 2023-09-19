@@ -27,6 +27,8 @@ function App() {
           <Route path="/" element={<Landingpage />} />
           <Route path="/kategorien" element={<Kategorien />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/books" element={<Landingpage />} />
+
         </Routes>
       </Router>
     </>

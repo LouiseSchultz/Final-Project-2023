@@ -4,6 +4,7 @@ import React, { useState } from "react";
 //import data from "../Data.json";
 import BookDetails from "./BookDetails"; // Import the BookDetails component
 
+
 function SearchBar({allBooks}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
@@ -19,6 +20,7 @@ function SearchBar({allBooks}) {
     setSearchTerm(searchTerm);
     console.log(searchTerm)
     console.log(allBooks)
+
     const searchTermFilteredBooks = allBooks.filter((book) => {
       return book.title
         .toLowerCase()
