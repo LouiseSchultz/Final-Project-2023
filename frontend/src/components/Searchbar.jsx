@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useState } from "react";
+import { useNavigate } from "react-router-dom/dist";
 
 function SearchBar({ allBooks }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -7,7 +7,7 @@ function SearchBar({ allBooks }) {
 
   const handleBookClick = (book) => {
     // Navigieren Sie zur Buchdetails-Seite, indem Sie die Buch-ID an die URL anhängen
-    console.log('hallo', book)
+    console.log("hallo", book);
     navigate(`/books/${book._id}`);
   };
 
@@ -29,15 +29,14 @@ function SearchBar({ allBooks }) {
       </div>
       <div className="template_Container">
         {/* Hier wird die Buchliste angezeigt */}
-        {searchTerm !== "" && allBooks.length > 0 &&
+        {searchTerm !== "" &&
+          allBooks.length > 0 &&
           allBooks.map((book, index) => {
             return (
               <div
                 className="template"
                 key={index}
-                onClick={() => handleBookClick(book)}
-              
-              >
+                onClick={() => handleBookClick(book)}>
                 {console.log(book)}
                 <h3>{book.title}</h3>
               </div>

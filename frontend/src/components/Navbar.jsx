@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom/dist";
 import "./navbar.css";
 import Kategorien from "./Kategorien.jsx";
 import SearchBar from "./Searchbar.jsx";
-import Warenkorb from "./Warenkorb";
 
 function NavBar() {
   const [allBooks, setAllBooks] = useState([]);
+
   useEffect(() => {
     loadAllBooks();
   }, []);
@@ -25,7 +25,7 @@ function NavBar() {
     <>
       <nav className="bg-primary py-4">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to={'/'} className="text-white text-2xl font-semibold">
+          <Link to={"/"} className="text-white text-2xl font-semibold">
             Your Bookstore
           </Link>
           <form className="relative">
