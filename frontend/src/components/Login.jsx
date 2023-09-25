@@ -27,17 +27,19 @@ function LoginForm() {
         email,
         password
       })
+      
       if(data.error) {
         console.log(data.error)
         //toast.error(data.error)
       } else {
         setLoginData({})
+        navigate("/Landingpage");
+        console.log("Login successful") //loginData);
       }
     } catch (error) {
-      
+      console.log(error)
     }
-    navigate("/Landingpage");
-    console.log("Login successful") //loginData);
+    
   };
 
   return (
@@ -77,7 +79,6 @@ function LoginForm() {
         <h2 className="text-3xl font-semibold text-center text-primary mb-6" >
           Login
         </h2>
-        <button className="btn btn-accent">Primary</button>
         <form onSubmit={handleLoginSubmit} className="form">
           <div className="mb-4">
             <label
