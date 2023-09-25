@@ -40,17 +40,15 @@ function Books() {
               <div className="card-body items-center text-center">
                 <h2 className="card-title text-primary">
                   {book.title}
-                  <div className="badge badge-secondary text-xs">
-                    {book.category}
-                  </div>
+                  
                 </h2>
                 <p>Autor: {book.author}</p>
-                <p>Beschreibung: {book.description}</p>
-                <p>Kategorie: {book.category}</p>
                 <p className="text-lg font-medium">{book.price}</p>
                 <div className="card-actions">
-                  <Link to="/book-details" className="btn btn-primary">
-                    Buy Now
+                  <Link
+                    to={`/books/${book._id}`}
+                    className="btn btn-primary">
+                    Zum Buch
                   </Link>
                 </div>
               </div>

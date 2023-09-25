@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import BookDetails from "./components/BookDetails"; // Importieren Sie die BookDetails-Komponente
 import Warenkorb from "./components/Warenkorb";
 import Footer from "./components/Footer";
+import { CartProvider } from "./components/CartContext";
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.withCredentials = true;
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Router>
+        <CartProvider>
         <Navbar />
 
         <Routes>
@@ -30,7 +32,7 @@ function App() {
           <Route path="/books" element={<Books />} />{" "}
           {/* Annahme: Route für die Buchliste */}
         </Routes>
-        <Footer />
+        <Footer /></CartProvider>
       </Router>
     </>
   );
