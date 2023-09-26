@@ -5,15 +5,15 @@ import axios from "axios";
 import { useCart } from "./CartContext";
 
 function Warenkorb() {
-  const { selectedBook, setSelectedBook } = useCart();
+  const { selectedBook, setSelectedBook, cart } = useCart();
 
   const [books, setBooks] = useState([]);
   const [bookCounts, setBookCounts] = useState({});
 
   useEffect(() => {
     if (selectedBook) {
-      console.log(selectedBook);
-      setBooks([...books, selectedBook]);
+      console.log("selectedBook eigentlich useCart", selectedBook);
+      setBooks([...books, ...cart]);
       setBookCounts({ ...bookCounts, [selectedBook._id]: 1 });
       setSelectedBook(null); // Reset selectedBook after displaying it
     }
@@ -27,7 +27,7 @@ function Warenkorb() {
   };
 
   const decrement = (bookId) => {
-    if (bookCounts[bookId] > 0) {
+    if (bookCounts[bookId] > 1) {
       setBookCounts((prevCounts) => ({
         ...prevCounts,
         [bookId]: prevCounts[bookId] - 1,

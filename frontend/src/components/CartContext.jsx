@@ -22,6 +22,7 @@ export function CartProvider({ children }) {
       });
       setCart(updatedCart);
     } else {
+        console.log("cart", cart)
       // If the book doesn't exist in the cart, add it
       setCart([...cart, { ...book, quantity: 1 }]);
     }
