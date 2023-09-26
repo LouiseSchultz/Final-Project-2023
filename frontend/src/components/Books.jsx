@@ -43,7 +43,7 @@ function Books() {
                   
                 </h2>
                 <p>Autor: {book.author}</p>
-                <p className="text-lg font-medium">{book.price}</p>
+                <p className="text-lg font-medium">{book.price} Euro</p>
                 <div className="card-actions">
                   <Link
                     to={`/books/${book._id}`}

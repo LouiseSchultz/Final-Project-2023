@@ -1,17 +1,25 @@
+// CartContext.js
 import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   const addToCart = (book) => {
-    const existingItemIndex = cart.findIndex((item) => item.id === book.id);
+    const existingItem = cart.find(
+      (item) => item.id === book._id && item.title === book.title
+    );
 
-    if (existingItemIndex !== -1) {
+    if (existingItem) {
       // If the book already exists in the cart, update the quantity
-      const updatedCart = [...cart];
-      updatedCart[existingItemIndex].quantity += 1;
+      const updatedCart = cart.map((item) => {
+        if (item.id === book._id && item.title === book.title) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
       setCart(updatedCart);
     } else {
       // If the book doesn't exist in the cart, add it
@@ -33,7 +41,15 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, getTotalPrice }}>
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        getTotalPrice,
+        selectedBook,
+        setSelectedBook,
+      }}>
       {children}
     </CartContext.Provider>
   );
