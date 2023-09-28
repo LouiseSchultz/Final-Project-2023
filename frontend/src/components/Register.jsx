@@ -1,7 +1,7 @@
-import { useState } from "react"
-import axios from 'axios'
+import { useState } from "react";
+import axios from "axios";
 // import { toast } from "react-hot-toast"
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom/dist";
 
 // function Register() {
 //   const navigate = useNavigate()
@@ -57,7 +57,7 @@ import { useNavigate } from "react-router-dom"
 
 //         <label htmlFor="">Telefon</label>
 //         <input type="number" placeholder='Telefonnummer' value={data.telefon} onChange={(e) => setData({...data, telefon: e.target.value})} />
-        
+
 //         <label htmlFor="">Email</label>
 //         <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
 
@@ -68,27 +68,36 @@ import { useNavigate } from "react-router-dom"
 //       </form>
 //     </div>
 
-
 function Register() {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    vorName: '',
-    nachName: '',
-    strasse: '',
+    vorName: "",
+    nachName: "",
+    strasse: "",
     hausNummer: "",
     postleitzahl: "",
-    ort: '',
+    ort: "",
     telefon: "",
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const registerUser = async (e) => {
     e.preventDefault();
-    const { vorName, nachName, strasse, hausNummer, postleitzahl, ort, telefon, email, password } = data;
+    const {
+      vorName,
+      nachName,
+      strasse,
+      hausNummer,
+      postleitzahl,
+      ort,
+      telefon,
+      email,
+      password,
+    } = data;
 
     try {
-      const { data } = await axios.post('http://localhost:5000/register', {
+      const { data } = await axios.post("http://localhost:5000/register", {
         vorName,
         nachName,
         strasse,
@@ -113,8 +122,8 @@ function Register() {
           email: "",
           password: "",
         });
-        console.log('Register Successful. Welcome!');
-        navigate('/login');
+        console.log("Register Successful. Welcome!");
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
@@ -122,12 +131,17 @@ function Register() {
   };
 
   return (
+    <body className="bg-secondary">
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-3xl font-semibold text-center text-primary mb-6">Register</h2>
+        <h2 className="text-3xl font-semibold text-center text-primary mb-6">
+          Neues Konto eröffnen
+        </h2>
         <form onSubmit={registerUser}>
           <div className="mb-4">
-            <label htmlFor="vorName" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="vorName"
+              className="block text-sm font-medium text-gray-600">
               Vorname
             </label>
             <input
@@ -140,7 +154,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="nachName" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="nachName"
+              className="block text-sm font-medium text-gray-600">
               Nachname
             </label>
             <input
@@ -153,7 +169,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="strasse" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="strasse"
+              className="block text-sm font-medium text-gray-600">
               Straße
             </label>
             <input
@@ -166,7 +184,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="hausNummer" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="hausNummer"
+              className="block text-sm font-medium text-gray-600">
               Hausnummer
             </label>
             <input
@@ -179,7 +199,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="postleitzahl" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="postleitzahl"
+              className="block text-sm font-medium text-gray-600">
               PLZ
             </label>
             <input
@@ -187,12 +209,16 @@ function Register() {
               id="postleitzahl"
               placeholder="PLZ"
               value={data.postleitzahl}
-              onChange={(e) => setData({ ...data, postleitzahl: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, postleitzahl: e.target.value })
+              }
               className="input-primary block w-full mt-1 px-3 py-2 border rounded-md text-gray-800"
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="ort" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="ort"
+              className="block text-sm font-medium text-gray-600">
               Ort
             </label>
             <input
@@ -205,7 +231,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="telefon" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="telefon"
+              className="block text-sm font-medium text-gray-600">
               Telefonnummer
             </label>
             <input
@@ -218,7 +246,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-600">
               Email
             </label>
             <input
@@ -231,7 +261,9 @@ function Register() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-600">
               Password
             </label>
             <input
@@ -245,15 +277,14 @@ function Register() {
           </div>
           <button
             type="submit"
-            className="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out"
-          >
+            className="btn-primary px-4 py-2 rounded-md text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out">
             Konto erstellen
           </button>
         </form>
       </div>
     </div>
+    </body>
   );
 }
 
 export default Register;
-

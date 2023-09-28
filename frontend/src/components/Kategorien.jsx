@@ -1,6 +1,3 @@
-import "./kategorien.css"; // You can create this CSS file for styling
-
-
 
 function Kategorien() {
   return (

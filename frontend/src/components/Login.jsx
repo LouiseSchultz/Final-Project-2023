@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom/dist";
 function LoginForm() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -18,12 +17,13 @@ function LoginForm() {
     });
   };
 
-  const handleLoginSubmit =  async (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     // Handle login form submission here, e.g., send data to the server for authentication.
-    const {email, password} = loginData;
+    const { email, password } = loginData;
     try {
-      const {data} = await axios.post('/login', { // payload
+      const { data } = await axios.post("/login", {
+        // payload
         email,
         password
       })
@@ -72,12 +72,14 @@ function LoginForm() {
     //     No account? <Link to="/Register">Registrieren</Link>
     //   </form>
     // </div>
+    <body className="bg-secondary">
+      
+    
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-3xl font-semibold text-center text-primary mb-6" >
+        <h2 className="text-3xl font-semibold text-center text-primary mb-6">
           Login
         </h2>
-        <button className="btn btn-accent">Primary</button>
         <form onSubmit={handleLoginSubmit} className="form">
           <div className="mb-4">
             <label
@@ -117,11 +119,12 @@ function LoginForm() {
             Login
           </button>
           <p className="text-gray-600 text-center">
-            Kein Konto? <Link to="/Register">Registrieren</Link>
+            Kein Konto? <Link to="/Register" className="text-primary">Registrieren</Link>
           </p>
         </form>
       </div>
     </div>
+    </body>
   );
 }
 
