@@ -1,11 +1,10 @@
 // Warenkorb.js
 import React, { useState, useEffect } from "react";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
-import axios from "axios";
 import { useCart } from "./CartContext";
 
 function Warenkorb() {
-  const { selectedBook, setSelectedBook, cart, addToCart, removeFromCart, increment, decrement } = useCart();
+  const { selectedBook, setSelectedBook, cart, getTotalPrice, removeFromCart, increment, decrement } = useCart();
 
   const [books, setBooks] = useState([]);
   const [bookCounts, setBookCounts] = useState({});
@@ -21,25 +20,6 @@ function Warenkorb() {
       setSelectedBook(null); // Reset selectedBook after displaying it
     }
   }, [selectedBook]);
-
- 
-
-  // const removeBook = (bookId) => {
-  //   const updatedBooks = books.filter((book) => book._id !== bookId);
-  //   setBooks(updatedBooks);
-
-  //   const updatedBookCounts = { ...bookCounts };
-  //   delete updatedBookCounts[bookId];
-  //   setBookCounts(updatedBookCounts);
-  // };
-
-  const calculateTotal = () => {
-    let total = 0;
-    for (const book of books) {
-      total += bookCounts[book._id] * book.price;
-    }
-    return total.toFixed(2);
-  };
 
   return (
     <div>
@@ -89,7 +69,7 @@ function Warenkorb() {
           <div className="mt-8 flex justify-between items-center">
             <div>
               <p className="text-lg font-semibold">
-                Total: €{calculateTotal()}
+                Total: €{getTotalPrice()}
               </p>
               <p className="text-gray-600">(including VAT and shipping)</p>
             </div>

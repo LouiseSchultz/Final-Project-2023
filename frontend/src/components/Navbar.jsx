@@ -93,7 +93,7 @@ function NavBar() {
                         {cart.reduce((total, item) => total + item.quantity, 0)}{" "}
                       </span>
                       <span className="text-error">
-                        {" "}
+    
                         Total Price: {getTotalPrice().toFixed(2)} euro
                       </span>
                       <div className="card-actions">
