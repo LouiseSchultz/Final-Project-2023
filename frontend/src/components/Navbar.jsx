@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Kategorien from "./Kategorien.jsx";
+import Contact from "./Contact"
 import SearchBar from "./Searchbar.jsx";
 import { useCart } from "./CartContext"; // Import useCart hook
 
@@ -54,9 +55,6 @@ function NavBar() {
             </button>
           </form>
           <ul className="flex space-x-6 text-white items-center">
-            {" "}
-            {/* Ändere flex und füge items-center hinzu */}
-            <li className="hover:text-secondary">Home</li>
             <li>
               <div className="group relative">
                 <span
@@ -78,6 +76,10 @@ function NavBar() {
             </li>
             <li className="hover:text-secondary">
               <Link to="/login">Login</Link>
+            </li>
+            <li className="hover:text-secondary">
+              {" "}
+              <Link to="/Contact">Kontakt</Link>
             </li>
             <li>
               <div className="flex-none">
@@ -115,9 +117,12 @@ function NavBar() {
                         Total Price: {getTotalPrice().toFixed(2)} euro
                       </span>
                       <div className="card-actions">
-                       <Link to="/warenkorb"> <button className="btn btn-error btn-block">
-                           Zum Warenkorb
-                        </button></Link>
+                        <Link to="/warenkorb">
+                          {" "}
+                          <button className="btn btn-error btn-block">
+                            Zum Warenkorb
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
