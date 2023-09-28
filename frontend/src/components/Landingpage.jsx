@@ -1,80 +1,110 @@
 import React from "react";
-import { Link } from "react-router-dom/dist";
-
+import { Link } from "react-router-dom";
 function Landingpage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-400 to-brown-400 text-white py-12">
+      <section className="bg-secondary text-black py-12">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-extrabold mb-4">
-            Discover Your Next Favorite Book
+            Finde dein nächstes Lieblingsbuch
           </h1>
-          <p className="text-lg mb-8">Explore a world of literature with us.</p>
+          <p className="text-lg mb-8">Erkunde mit uns die Welt der Bücher</p>
           <Link
             to="/books"
-            className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">
-            Explore Now
+            className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:secondary">
+            Jetzt alle Bücher ansehen{" "}
           </Link>
         </div>
       </section>
 
+      {/* Categories Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-extrabold mb-8">Categories</h2>
-          {/* Category cards using Daisy UI components */}
+          <h2 className="text-3xl font-extrabold mb-8">Unsere Top List</h2>
+          {/* Category cards using CSS Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Romantic Category */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="romantic-category-image.jpg"
+                src="https://images2.medimops.eu/product/edf891/M03864899117-large.jpg"
                 alt="Romantic Category"
-                className="w-full h-56 object-cover"
+                className="w-full h-auto"
               />
-              <div className="p-4">
+              <div className="p-4 flex-grow">
                 <h3 className="text-2xl font-semibold text-primary">
-                  Romantic
+                  Ab in die Küche
                 </h3>
-                <div className="mt-4"></div>
+                <div className="mt-4 flex-grow">
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc746b`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
+                </div>
               </div>
             </div>
 
-            {/* Cooking Category */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            {/* Der grosse Gatsby */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="cooking-category-image.jpg"
+                src="https://media2.hugendubel.de/shop/coverscans/310/31045333_9783150205143_xl.jpg"
                 alt="Cooking Category"
-                className="w-full h-56 object-cover"
+                className="w-full h-auto"
               />
-              <div className="p-4">
-                <h3 className="text-2xl font-semibold text-primary">Cooking</h3>
-                <div className="mt-4"></div>
+              <div className="p-4 flex-grow">
+                <h3 className="text-2xl font-semibold text-primary">
+                  Der Große Gatsby
+                </h3>
+                <div className="mt-4 flex-grow">
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7462`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Kids Category */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="kids-category-image.jpg"
+                src="https://images2.medimops.eu/product/bb8fe4/M03969668786-large.jpg"
                 alt="Kids Category"
-                className="w-full h-56 object-cover"
+                className="w-full h-auto"
               />
-              <div className="p-4">
-                <h3 className="text-2xl font-semibold text-primary">Kids</h3>
-                <div className="mt-4"></div>
+              <div className="p-4 flex-grow">
+                <h3 className="text-2xl font-semibold text-primary">
+                  Mollys wundersame Reise
+                </h3>
+                <div className="mt-4 flex-grow">
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7467`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Study Category */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="study-category-image.jpg"
+                src="https://images2.medimops.eu/product/50a134/M03809416436-large.jpg"
                 alt="Study Category"
-                className="w-full h-56 object-cover"
+                className="w-full h-auto"
               />
-              <div className="p-4">
-                <h3 className="text-2xl font-semibold text-primary">Study</h3>
-                <div className="mt-4"></div>
+              <div className="p-4 flex-grow">
+                <h3 className="text-2xl font-semibold text-primary">
+                  Sach - Zug um Zug{" "}
+                </h3>
+                <div className="mt-4 flex-grow">
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7469`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -82,15 +112,19 @@ function Landingpage() {
       </section>
 
       {/* Kontaktbereich */}
-      <section className="bg-white py-16">
+      <section className="bg-secondary py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-extrabold mb-8">Contact Us</h2>
+          <h2 className="text-3xl font-extrabold mb-8">Kontakt</h2>
           <p className="text-gray-700 mb-8">
-            Have questions or suggestions? Feel free to reach out to us.
+            Hast du Fragen oder Vorschläge? Zögere nicht, uns zu kontaktieren.
           </p>
+          <a
+            href="#"
+            className="btn-primary text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">
+            Contact Now
+          </a>
         </div>
       </section>
-
     </div>
   );
 }

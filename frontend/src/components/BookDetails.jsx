@@ -93,7 +93,7 @@ function BookDetails() {
             <p className="text-lg">
               <span className="text-black">{book.author}</span>
             </p>
-            <h3 className="text-black text-xl font-semibold">{book.price}</h3>
+            <h3 className="text-black text-xl font-semibold">{book.price} Euro</h3>
             <button
               type="button"
               className="btn btn-primary w-[200px]"
