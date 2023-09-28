@@ -28,7 +28,10 @@ export function CartProvider({ children }) {
       setCart([...cart, { ...book, quantity: 1 }]);
     }
   };
+
   const increment = (book) => {
+    //cart.filter((book._id !== ))
+    console.log("cart", cart);
     const updatedCart = cart.map((currentBook) => {
       if (currentBook._id === book._id) {
         currentBook.quantity++;
@@ -41,7 +44,6 @@ export function CartProvider({ children }) {
   };
 
   const decrement = (book) => {
-
     const updatedCart = cart.map((currentBook) => {
       if (currentBook._id === book._id) {
         currentBook.quantity--;
