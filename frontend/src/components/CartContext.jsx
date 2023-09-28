@@ -30,28 +30,25 @@ export function CartProvider({ children }) {
   };
 
   const increment = (book) => {
-    //cart.filter((book._id !== ))
+    console.log("book", book);
     console.log("cart", cart);
-    const updatedCart = cart.map((currentBook) => {
+
+    const updatedCart = [...cart].map((currentBook) => {
       if (currentBook._id === book._id) {
         currentBook.quantity++;
-        return currentBook;
-      } else {
-        return book;
       }
+      return currentBook;
     });
     setCart(updatedCart);
+    console.log(updatedCart);
   };
 
   const decrement = (book) => {
-    const updatedCart = cart.map((currentBook) => {
+    const updatedCart = [...cart].map((currentBook) => {
       if (currentBook._id === book._id) {
         currentBook.quantity--;
-
-        return currentBook;
-      } else {
-        return book;
       }
+      return currentBook;
     });
     setCart(updatedCart);
   };

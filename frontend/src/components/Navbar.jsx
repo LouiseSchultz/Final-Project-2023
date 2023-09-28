@@ -97,9 +97,13 @@ function NavBar() {
                         Total Price: {getTotalPrice().toFixed(2)} euro
                       </span>
                       <div className="card-actions">
-                        <button className="btn btn-primary btn-block">
-                          <Link to="/warenkorb"> Zum Warenkorb</Link>
-                        </button>
+                        <Link to="/warenkorb">
+                          
+                          <button className="btn btn-primary btn-block">
+                            
+                            Zum Warenkorb
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
