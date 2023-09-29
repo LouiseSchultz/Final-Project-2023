@@ -118,11 +118,11 @@ function Landingpage() {
           <p className="text-gray-700 mb-8">
             Hast du Fragen oder Vorschläge? Zögere nicht, uns zu kontaktieren.
           </p>
-          <a
-            href="#"
-            className="btn-primary text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">
-            Contact Now
-          </a>
+          <Link
+            to="/contact"
+            className="btn-primary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:secondary">
+          Kontaktformular
+          </Link>
         </div>
       </section>
     </div>

@@ -6,7 +6,8 @@ function Footer() {
       {" "}
       <footer className="bg-primary text-white py-8">
         <div className="container mx-auto text-center">
-          <p>&copy; 2023 Your Bookstore. All rights reserved.</p>
+          <p>&copy; 2023 Die Bücherecke
+          </p>
         </div>
       </footer>
     </div>
