@@ -109,12 +109,12 @@ function NavBar() {
                     className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
                     <div className="card-body">
                       <span className="font-bold text-error">
-                        Items:{" "}
+                        Bücher:{" "}
                         {cart.reduce((total, item) => total + item.quantity, 0)}{" "}
                       </span>
                       <span className="text-error">
                         {" "}
-                        Total Price: {getTotalPrice().toFixed(2)} euro
+                        Summe: {getTotalPrice().toFixed(2)} €
                       </span>
                       <div className="card-actions">
                         <Link to="/warenkorb">

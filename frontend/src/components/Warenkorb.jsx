@@ -25,7 +25,9 @@ function Warenkorb() {
     <div>
       <section className="bg-secondary py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-extrabold mb-8">Your Shopping Cart</h2>
+          <h2 className="text-3xl font-extrabold mb-8">
+            Deine neue Lieblingsbücher
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cart.map((book) => (
               <div
@@ -40,7 +42,7 @@ function Warenkorb() {
                     className="rounded-xl"
                   />
                   <p className="text-primary text-lg font-semibold mt-2">
-                    {book.price} Euro
+                    {book.price} €
                   </p>
                   <div className="mt-4 flex justify-between">
                     <div className="flex space-x-2">
@@ -59,7 +61,7 @@ function Warenkorb() {
                     <button
                       onClick={() => removeFromCart(book._id)}
                       className="text-primary hover:text-red-500 focus:outline-none">
-                      Remove
+                      Löschen
                     </button>
                   </div>
                 </div>
@@ -69,12 +71,12 @@ function Warenkorb() {
           <div className="mt-8 flex justify-between items-center">
             <div>
               <p className="text-lg font-semibold">
-                Total: €{getTotalPrice().toFixed(2)}
+                Total: {getTotalPrice().toFixed(2)} €
               </p>
-              <p className="text-gray-600">(including VAT and shipping)</p>
+              <p className="text-gray-600">(inkl. MwSt)</p>
             </div>
             <button className="btn-primary text-white text-lg px-6 py-3 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out">
-              Proceed to Checkout
+              Bestellung abschließen
             </button>
           </div>
         </div>

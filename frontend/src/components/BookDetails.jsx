@@ -39,7 +39,6 @@ function BookDetails() {
     <div className="max-w-7xl mx-auto px-4">
       <div className=" flex flex-col w-full lg:flex-row">
         <div className="grid flex-shrink-0 place-items-center my-20 lg:pr-6">
-          **Left content**
           <div className="carousel max-w-[400px] rounded-box">
             <div id="slide1" className="carousel-item relative">
               <img
@@ -83,23 +82,18 @@ function BookDetails() {
         </div>
         <div className="divider lg:divider-horizontal" />
         <div className="grid flex-shrink my-20">
-          **Right content**
           <div className="flex flex-col space-y-5 lg:pl-4">
             <div className="badge badge-secondary text-xs">{book.category}</div>
-            <h2 className="text-2xl text-black font-bold">
-              {book.title}
-             
-            </h2>
+            <h2 className="text-2xl text-black font-bold">{book.title}</h2>
             <p className="text-lg">
               <span className="text-black">{book.author}</span>
             </p>
-            <h3 className="text-black text-xl font-semibold">{book.price} Euro</h3>
+            <h3 className="text-black text-xl font-semibold">{book.price} €</h3>
             <button
               type="button"
               className="btn btn-primary w-[200px]"
               onClick={handleAddToCart}>
-              Add to Cart
-            </button>
+kaufen          </button>
             {/* Tabs */}
             <div className="tabs pt-12">
               <button
