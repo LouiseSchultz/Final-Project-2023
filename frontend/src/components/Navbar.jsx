@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Kategorien from "./Kategorien.jsx";
 import SearchBar from "./Searchbar.jsx";
 import { useCart } from "./CartContext"; // Import useCart hook
+import logo from "./logo.png";
 
 function NavBar() {
   const [allBooks, setAllBooks] = useState([]);
@@ -32,9 +33,14 @@ function NavBar() {
     <>
       <nav className="bg-primary py-4">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to={"/"} className="text-white text-2xl font-semibold hover:text-black">
-            Die Bücherecke
-          </Link>
+          <div className="flex items-center"> {/* Logo und Titel hier */}
+            <div className="rounded-full overflow-hidden w-20 h-20 mr-2">
+              <img src={logo} alt="logo" className="w-full h-full" />
+            </div>
+            <Link to={"/"} className="text-white text-2xl font-semibold hover:text-black">
+              Die Bücherecke
+            </Link>
+          </div>
           <form className="relative flex items-center">
             <SearchBar allBooks={allBooks} />
             <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
