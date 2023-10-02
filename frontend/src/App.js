@@ -20,19 +20,19 @@ function App() {
     <>
       <Router>
         <CartProvider>
-        <Navbar />
-
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Landingpage />} />
-          <Route path="/warenkorb" element={<Warenkorb />} />
-          <Route path="/kategorien" element={<Kategorien />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/books/:bookId" element={<BookDetails />} />
-          <Route path="/books" element={<Books />} />{" "}
-          {/* Annahme: Route für die Buchliste */}
-        </Routes>
-        <Footer /></CartProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Landingpage />} />
+            <Route path="/warenkorb" element={<Warenkorb />} />
+            <Route path="/kategorien" element={<Kategorien />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/books/:bookId" element={<BookDetails />} />
+            <Route path="/books" element={<Books />} />{" "}
+            {/* Annahme: Route für die Buchliste */}
+          </Routes>
+          <Footer/>
+        </CartProvider>
       </Router>
     </>
   );

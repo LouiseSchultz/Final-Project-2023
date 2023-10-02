@@ -58,7 +58,8 @@ function NavBar() {
             {/* Ändere flex und füge items-center hinzu */}
             <li className="hover:text-secondary">Home</li>
             <li>
-              <div className="group relative">
+              <Kategorien/>
+              {/* <div className="group relative">
                 <span
                   className="cursor-pointer hover:text-secondary"
                   onClick={toggleDropdown}>
@@ -72,9 +73,8 @@ function NavBar() {
                   <li>Kinderbücher</li>
                   <li>Kochbücher</li>
                   <li>Lehrbücher</li>
-                  {/* Weitere Kategorien hier hinzufügen */}
                 </ul>
-              </div>
+              </div> */}
             </li>
             <li className="hover:text-secondary">
               <Link to="/login">Login</Link>
@@ -115,9 +115,11 @@ function NavBar() {
                         Total Price: {getTotalPrice().toFixed(2)} euro
                       </span>
                       <div className="card-actions">
-                        <button className="btn btn-error btn-block">
-                          <Link to="/warenkorb"> Zum Warenkorb</Link>
-                        </button>
+                        
+                          <Link to="/warenkorb"> 
+                          <button className="btn btn-error btn-block">Zum Warenkorb</button>
+                          </Link>
+                        
                       </div>
                     </div>
                   </div>

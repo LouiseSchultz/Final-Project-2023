@@ -35,6 +35,18 @@ export const getBookById = async (req, res) => {
   }
 }
 
+export const getBookByCategory = async (req,res) => {
+  try {
+    const category = req.params.category.toLowerCase();
+    console.log(category)
+    const books = await bookModel.find({ "category": category })
+    console.log(books)
+    res.send(books)
+  } catch (error) {
+    res.status(500).send(`Fehler beim Abrufen von Büchern in der Kategorie ${category}: ${error.message}`)
+  }
+}
+
 // // Funktion zum Abrufen von Büchern von der Google Books API
 // export const getBooksApi = async (req, res) => {
 //   try {

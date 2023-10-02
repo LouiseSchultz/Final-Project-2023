@@ -69,7 +69,7 @@ function Warenkorb() {
           <div className="mt-8 flex justify-between items-center">
             <div>
               <p className="text-lg font-semibold">
-                Total: €{getTotalPrice()}
+                Total: €{getTotalPrice().toFixed(2)}
               </p>
               <p className="text-gray-600">(including VAT and shipping)</p>
             </div>

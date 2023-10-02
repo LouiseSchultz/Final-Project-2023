@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom/dist";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 function Books() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  
+  // Përdorimi i useParams për të marrë parametrat nga URL
+  const { category } = useParams();
 
   useEffect(() => {
     async function fetchBooks() {
       setLoading(true);
       try {
-        const response = await axios.get("/books"); // Stelle sicher, dass die URL korrekt ist
+        let response;
+
+        // Përdorimi i parametrit të kategorisë nga URL për të formuar URL e kërkesës
+        if (category) {
+          response = await axios.get(`/books/category/${category}`); // Kërkesë për librathënie bazuar në kategori
+        } else {
+          response = await axios.get("/books"); // Kërkesë për të gjitha librathënie
+        }
+
         setBooks(response.data);
         setLoading(false);
       } catch (error) {
@@ -20,7 +31,7 @@ function Books() {
     }
 
     fetchBooks();
-  }, []);
+  }, [category]); // Shtoni "category" si varg të ndryshueshëm në listën e ndryshueshëm të përditësimit për të rifreskuar kërkesën kur ndryshon kategoria në URL.
 
   return (
     <section>
@@ -28,8 +39,8 @@ function Books() {
         <p>Lade Bücher...</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {books.map((book) => (
-            <div key={book.id} className="card bg-base-100 shadow-xl">
+          {books.map((book, index) => (
+            <div key={book._id} className="card bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
                   src={`http://localhost:5000${book.image}`}
@@ -40,7 +51,6 @@ function Books() {
               <div className="card-body items-center text-center">
                 <h2 className="card-title text-primary">
                   {book.title}
-                  
                 </h2>
                 <p>Autor: {book.author}</p>
                 <p className="text-lg font-medium">{book.price} Euro</p>
