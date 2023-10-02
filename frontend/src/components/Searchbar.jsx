@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-// import "./styletest.css";
-//import data from "../Data.json";
-import BookDetails from "./BookDetails"; // Import the BookDetails component
-
-function SearchBar({allBooks}) {
+function SearchBar({ allBooks }) {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
@@ -18,16 +13,7 @@ function SearchBar({allBooks}) {
 
   const handleSearchBooks = async (searchTerm) => {
     setSearchTerm(searchTerm);
-    console.log(searchTerm)
-    console.log(allBooks)
-    const searchTermFilteredBooks = allBooks.filter((book) => {
-      return book.title
-        .toLowerCase()
-        .startsWith(searchTerm.toLowerCase());
-    })
-    console.log("result" + searchTermFilteredBooks)
-    setFilteredBooks(searchTermFilteredBooks)
-  }
+  };
 
   return (
     <div className="templateContainer">
@@ -63,3 +49,9 @@ function SearchBar({allBooks}) {
 }
 
 export default SearchBar;
+
+
+
+
+
+

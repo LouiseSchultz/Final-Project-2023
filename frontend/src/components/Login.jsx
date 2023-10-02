@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
+//import { useDispatch } from 'react-redux';
+//import { loginUser } from './AuthSlice.jsx';
+import { useUser } from "./UserContext.jsx";
+
 function LoginForm() {
     const navigate = useNavigate();
+    const { updateUserData } = useUser();
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -18,7 +23,7 @@ function LoginForm() {
     });
   };
 
-  const handleLoginSubmit =  async (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     // Handle login form submission here, e.g., send data to the server for authentication.
     const {email, password} = loginData;
@@ -27,17 +32,27 @@ function LoginForm() {
         email,
         password
       })
+     
       if(data.error) {
         console.log(data.error)
         //toast.error(data.error)
       } else {
         setLoginData({})
+        navigate("/user-profile");
+
+        const userData = { email: data.email, name: data.vorName, strasse: data.strasse, hausnummer: data.hausNummer, postleitzahl: data.postleitzahl, ort: data.ort };
+        updateUserData(userData);
+
+        
+        console.log("Login successful") //loginData);
+
+       
       }
     } catch (error) {
-      
+      console.log("Login failed", error);
     }
-    navigate("/Landingpage");
-    console.log("Login successful") //loginData);
+   
+    //console.log("Login successful") //loginData);
   };
 
   return (

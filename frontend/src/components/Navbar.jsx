@@ -4,8 +4,12 @@ import "./navbar.css";
 import Kategorien from "./Kategorien.jsx";
 import SearchBar from "./Searchbar.jsx"
 import Warenkorb from "./Warenkorb";
+import  {useUser}  from "./UserContext.jsx";
+
 
 function NavBar() {
+  const userData  = useUser();
+  console.log(userData)
   const [allBooks, setAllBooks] = useState([])
   useEffect(() => {
     loadAllBooks()
@@ -24,6 +28,8 @@ function NavBar() {
 
   return (
     <>
+    {console.log("userdata:       ", userData)}
+    {console.log("userdata email: ", userData.email)}
    
       <nav className="bg-primary py-4">
         <div className="container mx-auto flex justify-between items-center">
@@ -59,7 +65,26 @@ function NavBar() {
               <Kategorien />
             </li>
             <li>
-              <Link to="/login">Login</Link>
+            {userData.email ? (
+             
+                <Link to="/user-profile">
+                  <ion-icon
+                    class="p-2 text-base"
+                    name="person"
+                    title="User Profile"
+                  ></ion-icon>
+                </Link>
+                
+              ) : (
+                <Link to="/login">
+                  <ion-icon
+                    class="p-2 text-base"
+                    name="person"
+                    title="Login"
+                  ></ion-icon>
+                   </Link>
+                    )}
+
             </li>
             <li>
               <Link to="/warenkorb"><Warenkorb/></Link>
