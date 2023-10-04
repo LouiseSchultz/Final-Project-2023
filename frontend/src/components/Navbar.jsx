@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Kategorien from "./Kategorien.jsx";
-import Contact from "./Contact"
+import Contact from "./Contact";
 import SearchBar from "./Searchbar.jsx";
 import { useCart } from "./CartContext"; // Import useCart hook
 import Warenkorb from "./Warenkorb";
-import  {useUser}  from "./UserContext.jsx";
+import { useUser } from "./UserContext.jsx";
 import logo from "./logo.png";
 
-console.log("usecart", useCart)
+console.log("usecart", useCart);
 function NavBar() {
   const [allBooks, setAllBooks] = useState([]);
   const { cart, getTotalPrice } = useCart(); // Use cart from the context
 
-  const userData  = useUser();
-  console.log(userData)
+  const userData = useUser();
+  console.log(userData);
   useEffect(() => {
-    loadAllBooks()
-  }, [])
-
-
+    loadAllBooks();
+  }, []);
 
   const loadAllBooks = async () => {
     try {
@@ -43,34 +41,42 @@ function NavBar() {
       {console.log("userdata email: ", userData.email)}
 
       <nav className="bg-primary py-4">
-        <div className="container mx-auto flex justify-between items-center "style={{ marginLeft: "253px" }}>
+        <div
+          className="container mx-auto flex justify-between items-center "
+          style={{ marginLeft: "253px" }}>
           <Link
             to={"/"}
             className="rounded-full overflow-hidden w-20 h-20 mr-2">
             <img src={logo} alt="logo" className="w-full h-full" />
           </Link>
-          <div className="flex items-center space-x-6 "> {/* Nouveau conteneur pour le centrage */}
+          <div className="flex items-center space-x-6 ">
+            {" "}
+            {/* Nouveau conteneur pour le centrage */}
             <ul className="flex space-x-6 text-white items-center">
               {/* ... (autres éléments de la barre de navigation) */}
             </ul>
-            <div className="relative flex items-center"> {/* Centrer la barre de recherche */}
-          <form className="relative flex items-center">
-            <SearchBar allBooks={allBooks} />
-            <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
-              <svg
-                className="text-primary h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24">
-                <path d="M21 21l-4.35-4.35"></path>
-                <circle cx="10.5" cy="10.5" r="7.5"></circle>
-              </svg>{" "}
-            </button>
-          </form>
-          </div>
+            <div className="relative flex items-center">
+              {" "}
+              {/* Centrer la barre de recherche */}
+              <form className="relative flex items-center">
+                <SearchBar allBooks={allBooks} />
+                <button
+                  type="submit"
+                  className="absolute right-0 top-0 mt-3 mr-4">
+                  <svg
+                    className="text-primary h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24">
+                    <path d="M21 21l-4.35-4.35"></path>
+                    <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                  </svg>{" "}
+                </button>
+              </form>
+            </div>
           </div>
           <ul className="flex space-x-6 text-white items-center">
             <li>
@@ -96,24 +102,25 @@ function NavBar() {
               {" "}
               <Link to="/Contact">Kontakt</Link>
             </li>
-            <li>                  <label tabIndex={0} className="btn btn-ghost btn-circle">
-
-              {userData.email ? (
-                <Link to="/user-profile">
-                  <ion-icon
-                    class="p-2 text-base"
-                    name="person"
-                    title="User Profile"></ion-icon>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <ion-icon
-                    class="p-2 text-base"
-                    name="person"
-                    title="Login"></ion-icon>
-                </Link>
-              )}            </label>
-
+            <li>
+              {" "}
+              <label tabIndex={0} className="btn btn-ghost btn-circle">
+                {userData.email ? (
+                  <Link to="/user-profile">
+                    <ion-icon
+                      class="p-2 text-base"
+                      name="person"
+                      title="User Profile"></ion-icon>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <ion-icon
+                      class="p-2 text-base"
+                      name="person"
+                      title="Login"></ion-icon>
+                  </Link>
+                )}{" "}
+              </label>
             </li>
 
             <li>
