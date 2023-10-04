@@ -43,12 +43,17 @@ function NavBar() {
       {console.log("userdata email: ", userData.email)}
 
       <nav className="bg-primary py-4">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center "style={{ marginLeft: "253px" }}>
           <Link
             to={"/"}
             className="rounded-full overflow-hidden w-20 h-20 mr-2">
             <img src={logo} alt="logo" className="w-full h-full" />
           </Link>
+          <div className="flex items-center space-x-6 "> {/* Nouveau conteneur pour le centrage */}
+            <ul className="flex space-x-6 text-white items-center">
+              {/* ... (autres éléments de la barre de navigation) */}
+            </ul>
+            <div className="relative flex items-center"> {/* Centrer la barre de recherche */}
           <form className="relative flex items-center">
             <SearchBar allBooks={allBooks} />
             <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
@@ -65,6 +70,8 @@ function NavBar() {
               </svg>{" "}
             </button>
           </form>
+          </div>
+          </div>
           <ul className="flex space-x-6 text-white items-center">
             <li>
               <div className="group relative">
