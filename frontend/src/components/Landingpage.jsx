@@ -1,19 +1,20 @@
-import React from 'react';
-
+import React from "react";
+import { Link } from "react-router-dom";
 function Landingpage() {
   return (
     <div>
       {/* Hero Section */}
       <section className="bg-secondary text-black py-12">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-extrabold mb-4">Finde dein nächstes Lieblingsbuch</h1>
+          <h1 className="text-4xl font-extrabold mb-4">
+            Finde dein nächstes Lieblingsbuch
+          </h1>
           <p className="text-lg mb-8">Erkunde mit uns die Welt der Bücher</p>
-          <a
-            href="#"
-            className="btn-primary text-white text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:bg-orange-600"
-          >
-            Jetzt entdecken
-          </a>
+          <Link
+            to="/books"
+            className="btn-secondary text- text-lg font-semibold px-6 py-3 rounded-full transition duration-300 ease-in-out hover:secondary">
+            Jetzt alle Bücher ansehen{" "}
+          </Link>
         </div>
       </section>
 
@@ -26,24 +27,25 @@ function Landingpage() {
             {/* Romantic Category */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="https://media2.hugendubel.de/shop/coverscans/330/33017060_9783423289849_xl.jpg"
+                src="https://images2.medimops.eu/product/edf891/M03864899117-large.jpg"
                 alt="Romantic Category"
                 className="w-full h-auto"
               />
               <div className="p-4 flex-grow">
-                <h3 className="text-2xl font-semibold text-primary">Das Cafe am Rande der Welt</h3>
+                <h3 className="text-2xl font-semibold text-primary">
+                  Ab in die Küche
+                </h3>
                 <div className="mt-4 flex-grow">
-                  <a
-                    href="#"
-                    className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out"
-                  >
-                    Kaufen
-                  </a>
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc746b`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
                 </div>
               </div>
             </div>
 
-            {/* Cooking Category */}
+            {/* Der grosse Gatsby */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
                 src="https://media2.hugendubel.de/shop/coverscans/310/31045333_9783150205143_xl.jpg"
@@ -51,14 +53,15 @@ function Landingpage() {
                 className="w-full h-auto"
               />
               <div className="p-4 flex-grow">
-                <h3 className="text-2xl font-semibold text-primary">Der Große Gatsby</h3>
+                <h3 className="text-2xl font-semibold text-primary">
+                  Der Große Gatsby
+                </h3>
                 <div className="mt-4 flex-grow">
-                  <a
-                    href="#"
-                    className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out"
-                  >
-                    Kaufen
-                  </a>
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7462`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
                 </div>
               </div>
             </div>
@@ -66,19 +69,20 @@ function Landingpage() {
             {/* Kids Category */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="https://media2.hugendubel.de/shop/coverscans/362/36255834_9783446264199_xl.jpg"
+                src="https://images2.medimops.eu/product/bb8fe4/M03969668786-large.jpg"
                 alt="Kids Category"
                 className="w-full h-auto"
               />
               <div className="p-4 flex-grow">
-                <h3 className="text-2xl font-semibold text-primary">Der Gesang der Flusskrebse</h3>
+                <h3 className="text-2xl font-semibold text-primary">
+                  Mollys wundersame Reise
+                </h3>
                 <div className="mt-4 flex-grow">
-                  <a
-                    href="#"
-                    className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out"
-                  >
-                    Kaufen
-                  </a>
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7467`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
                 </div>
               </div>
             </div>
@@ -86,19 +90,20 @@ function Landingpage() {
             {/* Study Category */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
               <img
-                src="https://media2.hugendubel.de/shop/coverscans/347/34735068_9783257070668_xl.jpg"
+                src="https://images2.medimops.eu/product/50a134/M03809416436-large.jpg"
                 alt="Study Category"
                 className="w-full h-auto"
               />
               <div className="p-4 flex-grow">
-                <h3 className="text-2xl font-semibold text-primary">Der Vorleser</h3>
+                <h3 className="text-2xl font-semibold text-primary">
+                  Sach - Zug um Zug{" "}
+                </h3>
                 <div className="mt-4 flex-grow">
-                  <a
-                    href="#"
-                    className="btn-primary text-white font-semibold hover:bg-orange-600 transition duration-300 ease-in-out"
-                  >
-                    Kaufen
-                  </a>
+                  <Link
+                    to={`/books/650856e85633e3f2d3bc7469`}
+                    className="btn btn-primary">
+                    Zum Buch
+                  </Link>
                 </div>
               </div>
             </div>
@@ -110,20 +115,16 @@ function Landingpage() {
       <section className="bg-secondary py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-extrabold mb-8">Kontakt</h2>
-          <p className="text-gray-700 mb-8">Hast du Fragen oder Vorschläge? Zögere nicht, uns zu kontaktieren.</p>
+          <p className="text-gray-700 mb-8">
+            Hast du Fragen oder Vorschläge? Zögere nicht, uns zu kontaktieren.
+          </p>
           <a
             href="#"
-            className="btn-primary text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-300 ease-in-out hover:bg-orange-600"
-          >
+            className="btn-primary text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-300 ease-in-out hover:bg-orange-600">
             Contact Now
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-primary text-white py-8">
-        <div className="container mx-auto text-center"></div>
-      </footer>
     </div>
   );
 }

@@ -1,55 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
-import axios from "axios";
 import { useCart } from "./CartContext";
 
 function Warenkorb() {
-  const { selectedBook, setSelectedBook } = useCart();
+  const { selectedBook, setSelectedBook, cart, getTotalPrice, removeFromCart, increment, decrement } = useCart();
 
   const [books, setBooks] = useState([]);
   const [bookCounts, setBookCounts] = useState({});
 
   useEffect(() => {
+    console.log("selectebook", selectedBook)
+    console.log("cart", cart
+    )
     if (selectedBook) {
-      console.log(selectedBook);
-      setBooks([...books, selectedBook]);
+      console.log("selectedBook eigentlich useCart", selectedBook);
+      setBooks([...books, ...cart]);
       setBookCounts({ ...bookCounts, [selectedBook._id]: 1 });
       setSelectedBook(null); // Reset selectedBook after displaying it
     }
   }, [selectedBook]);
-
-  const increment = (bookId) => {
-    setBookCounts((prevCounts) => ({
-      ...prevCounts,
-      [bookId]: prevCounts[bookId] + 1,
-    }));
-  };
-
-  const decrement = (bookId) => {
-    if (bookCounts[bookId] > 0) {
-      setBookCounts((prevCounts) => ({
-        ...prevCounts,
-        [bookId]: prevCounts[bookId] - 1,
-      }));
-    }
-  };
-
-  const removeBook = (bookId) => {
-    const updatedBooks = books.filter((book) => book._id !== bookId);
-    setBooks(updatedBooks);
-
-    const updatedBookCounts = { ...bookCounts };
-    delete updatedBookCounts[bookId];
-    setBookCounts(updatedBookCounts);
-  };
-
-  const calculateTotal = () => {
-    let total = 0;
-    for (const book of books) {
-      total += bookCounts[book._id] * book.price;
-    }
-    return total.toFixed(2);
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -57,7 +26,7 @@ function Warenkorb() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-extrabold mb-8">Dein Warenkorb</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {books.map((book) => (
+            {cart.map((book) => (
               <div
                 key={book._id}
                 className="bg-white shadow-md rounded-md overflow-hidden">
@@ -75,19 +44,19 @@ function Warenkorb() {
                   <div className="mt-4 flex justify-between">
                     <div className="flex space-x-2">
                       <button
-                        onClick={() => decrement(book._id)}
+                        onClick={() => decrement(book)}
                         className="text-primary text-lg px-2 py-1 ing-primary">
                         <AiFillMinusCircle />
                       </button>
-                      <p>{bookCounts[book._id]}</p>
+                      <p>{book.quantity}</p>
                       <button
-                        onClick={() => increment(book._id)}
+                        onClick={() => increment(book)}
                         className="text-primary text-lg px-2 py-1 ing-primary">
                         <AiFillPlusCircle />
                       </button>
                     </div>
                     <button
-                      onClick={() => removeBook(book._id)}
+                      onClick={() => removeFromCart(book._id)}
                       className="text-primary hover:text-red-500 focus:outline-none">
                       Remove
                     </button>
@@ -99,7 +68,7 @@ function Warenkorb() {
           <div className="mt-8 flex justify-between items-center">
             <div>
               <p className="text-lg font-semibold">
-                Gesamtsumme: €{calculateTotal()}
+                Total: €{getTotalPrice().toFixed(2)}
               </p>
               <p className="text-gray-600">(einschließlich MwSt)</p>
             </div>
