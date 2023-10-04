@@ -41,9 +41,7 @@ function NavBar() {
       {console.log("userdata email: ", userData.email)}
 
       <nav className="bg-primary py-4">
-        <div
-          className="container mx-auto flex justify-between items-center "
-          style={{ marginLeft: "253px" }}>
+        <div className="container mx-auto flex justify-between items-center "style={{ marginLeft: "254px" }}>
           <Link
             to={"/"}
             className="rounded-full overflow-hidden w-20 h-20 mr-2">
@@ -80,7 +78,8 @@ function NavBar() {
           </div>
           <ul className="flex space-x-6 text-white items-center">
             <li>
-              <div className="group relative">
+              <Kategorien/>
+              {/* <div className="group relative">
                 <span
                   className="cursor-pointer hover:text-secondary"
                   onClick={toggleDropdown}>
@@ -94,9 +93,8 @@ function NavBar() {
                   <li>Kinderbücher</li>
                   <li>Kochbücher</li>
                   <li>Lehrbücher</li>
-                  {/* Weitere Kategorien hier hinzufügen */}
                 </ul>
-              </div>
+              </div> */}
             </li>
             <li className="hover:text-secondary">
               {" "}
