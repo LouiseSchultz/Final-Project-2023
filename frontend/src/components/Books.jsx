@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 
 function Books() {
@@ -7,17 +7,27 @@ function Books() {
   const [loading, setLoading] = useState(false);
   
   // Përdorimi i useParams për të marrë parametrat nga URL
-  const { category } = useParams();
+  //const  category  = useParams();
+
+  const location = useLocation();
+
+  // Extract the search string (query parameters)
+  const searchParams = new URLSearchParams(location.search);
+
+  // Read the 'category' query parameter
+  const category = searchParams.get('category');
 
   useEffect(() => {
     async function fetchBooks() {
       setLoading(true);
+      console.log("category ", category)
       try {
         let response;
 
         // Përdorimi i parametrit të kategorisë nga URL për të formuar URL e kërkesës
         if (category) {
-          response = await axios.get(`/books/category/${category}`); // Kërkesë për librathënie bazuar në kategori
+          response = await axios.get(`/books/category/${category}`);
+         // Kërkesë për librathënie bazuar në kategori
         } else {
           response = await axios.get("/books"); // Kërkesë për të gjitha librathënie
         }

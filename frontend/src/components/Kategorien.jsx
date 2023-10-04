@@ -5,14 +5,15 @@ function Kategorien() {
   const [categories, setCategories] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const categoryParam = queryParams.get("category");
+  
 
   const handleCategoryClick = (category) => {
     // Navigoni në rrugën e duhur me parametrin e kategorisë në URL
+    // In Zukunft mit <Link> Componente realisiere
     navigate(`/books?category=${category.toLowerCase()}`);
   };
+
+
 
   async function fetchCategories() {
     const backendUrl = "http://localhost:5000/books";
@@ -54,12 +55,11 @@ function Kategorien() {
       >
         {categories.map((category) => (
           <li
-            key={category}
-            onClick={() => handleCategoryClick(category)}
-            className={category === categoryParam ? "text-primary" : ""}
-          >
-            {category}
-          </li>
+          key={category}
+          onClick={() => handleCategoryClick(category)}
+        >
+          {category}
+        </li>
         ))}
       </ul>
     </div>
