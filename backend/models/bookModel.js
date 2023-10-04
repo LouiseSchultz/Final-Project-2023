@@ -31,8 +31,8 @@ const bookSchema = new mongoose.Schema({
             values:[
                 "romane",
                 "lehrbücher",
-                "Kinderbücher",
-                "Kochbücher",
+                "kinderbücher",
+                "kochbücher",
             ]
         }
 
