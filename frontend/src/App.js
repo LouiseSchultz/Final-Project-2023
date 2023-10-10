@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom/dist";
 import Books from "./components/Books";
 import Contact from "./components/Contact";
-
+import Proceed from "./components/Proceed";
 import Kategorien from "./components/Kategorien";
 import Register from "./components/Register";
 import Landingpage from "./components/Landingpage";
@@ -34,6 +34,7 @@ function App() {
             {" "}
             <Route path="/contact" element={<Contact />} />
             <Route path="/warenkorb" element={<Warenkorb />} />
+            <Route path="proceed" element={<Proceed />} />
             <Route path="/kategorien" element={<Kategorien />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Landingpage />} />

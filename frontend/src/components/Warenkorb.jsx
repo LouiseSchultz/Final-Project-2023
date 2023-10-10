@@ -1,5 +1,6 @@
 // Warenkorb.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
+import { Link } from "react-router-dom"; // Correct import
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { useCart } from "./CartContext";
 
@@ -75,9 +76,9 @@ function Warenkorb() {
               </p>
               <p className="text-gray-600">(inkl. MwSt)</p>
             </div>
-            <button className="btn-primary text-white text-lg px-6 py-3 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out">
-              Bestellung abschließen
-            </button>
+           <Link to="/Proceed"> <button className="btn-primary text-white text-lg px-6 py-3 rounded-full hover:bg-orange-600 transition duration-300 ease-in-out">
+              Bestellung abschließen{" "}
+            </button></Link>
           </div>
         </div>
       </section>

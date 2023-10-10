@@ -41,7 +41,7 @@ function NavBar() {
       {console.log("userdata email: ", userData.email)}
 
       <nav className="bg-primary py-4">
-        <div className="container mx-auto flex justify-between items-center "style={{ marginLeft: "254px" }}>
+        <div className="container mx-auto flex justify-between items-center "style={{ marginLeft: "180px" }}>
           <Link
             to={"/"}
             className="rounded-full overflow-hidden w-20 h-20 mr-2">

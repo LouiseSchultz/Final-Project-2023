@@ -7,7 +7,7 @@ function Landingpage() {
       <section className="bg-secondary text-black py-12">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-extrabold mb-4">
-Die Bücherecke          </h1>
+Die Bücherecke      </h1>
           <p className="text-lg mb-8">Erkunde mit uns die Welt der Bücher</p>
           <Link
             to="/books"

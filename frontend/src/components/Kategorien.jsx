@@ -43,7 +43,7 @@ function Kategorien() {
   return (
     <div className="group relative">
       <span
-        className="cursor-pointer hover:text-black"
+        className="cursor-pointer hover:text-white"
         onClick={toggleDropdown}
       >
         Kategorien
