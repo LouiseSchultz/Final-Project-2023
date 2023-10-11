@@ -61,6 +61,7 @@ export const registerUser = async (req,res) => {
 export const loginUser = async (req,res) => {
   try {
     const { email, password} = req.body
+    console.log("loginUser")
 
     // Check if User exists
     const user = await userModel.findOne({email});
@@ -69,12 +70,13 @@ export const loginUser = async (req,res) => {
         error: 'No user found'
       })
     }
-
+    console.log(user)
     // Check if passwords match
     const match = await comparePassword(password, user.password)
     if(match) {
-      jwt.sign({email: user.email, id: user._id, name:user.name}, process.env.JWT_SECRET, {}, (err, token) => {
+      jwt.sign({email: user.email, id: user._id, name:user.vorName, strasse: user.strasse, hausnummer: user.hausNummer, postleitzahl: user.postleitzahl, ort: user.ort }, process.env.JWT_SECRET, {}, (err, token) => {
         if(err) throw err;
+        console.log("setze tokken im backend")
         res.cookie('token', token).json(user)
       })
     }
@@ -87,6 +89,7 @@ export const loginUser = async (req,res) => {
     console.log(error)
   }
 }
+
 
 export const getProfile = (req,res) => {
   const{token} = req.cookies

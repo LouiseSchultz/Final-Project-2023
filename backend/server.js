@@ -4,7 +4,10 @@ import 'dotenv/config'
 import { connectMongoose } from "./util/connectMongoose.js"
 import { bookRouter } from "./router/bookRouter.js";
 import userRouter from "./router/userRouter.js";
+import orderRouter from "./router/orderRouter.js";
+import productRouter from "./router/productRouter.js";
 import cookieParser from 'cookie-parser'
+import logoutRouter from "./router/logOutRouter.js";
 
 const PORT = process.env.PORT || 6000
 
@@ -24,6 +27,9 @@ app.use('/images', express.static('images'))
 
 app.use(bookRouter)
 app.use(userRouter)
+app.use(orderRouter)
+app.use(productRouter)
+app.use(logoutRouter);
 
 if(connected){
     app.listen(PORT, () => {
