@@ -99,7 +99,7 @@ kaufen          </button>
               <button
                 type="button"
                 className="tab tab-lg tab-lifted tab-active">
-                Description
+                Beschreibung
               </button>
             </div>
             <p className="text-black">{book.description}</p>

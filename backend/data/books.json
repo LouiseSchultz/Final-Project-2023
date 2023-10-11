@@ -1,93 +1,92 @@
 
 [
   {
-    
     "title": "Der Große Gatsby",
     "author": "F. Scott Fitzgerald",
     "description": "Die Geschichte des rätselhaften Jay Gatsby und seiner leidenschaftlichen Obsession für die schöne Daisy Buchanan.",
     "price": "15.99",
-    "category": "Romane",
+    "category": "romane",
     "image": "/images/1.jpg"
   },
   {
-   
     "title": "Wer die Nachtigall stört",
     "author": "Harper Lee",
     "description": "In der rassisch aufgeladenen Atmosphäre des amerikanischen Südens der 1930er Jahre untersucht dieser Roman Themen wie Rassismus und Gerechtigkeit aus der Sicht eines jungen Mädchens namens Scout Finch.",
     "price": "12.49",
-    "category": "Romane",
-    "image": "/images/1.jpg"
+    "category": "romane",
+    "image": "/images/2.jpg"
   },
   {
-    
     "title": "1984",
     "author": "George Orwell",
     "description": "Ein dystopischer Roman, der die Konsequenzen von Totalitarismus, Zensur und Überwachung in einer düsteren Zukunftsgesellschaft erforscht.",
     "price": "9.99",
-    "category": "Romane",
-    "image": "/images/1.jpg"
+    "category": "romane",
+    "image": "/images/3.jpg"
   },
   {
-    
     "title": "Stolz und Vorurteil",
     "author": "Jane Austen",
     "description": "Ein klassischer Roman, der die Themen Liebe, Klasse und gesellschaftliche Erwartungen im England des 19. Jahrhunderts erforscht.",
     "price": "14.95",
-    "category": "Romane",
-    "image": "/images/1.jpg"
+    "category": "romane",
+    "image": "/images/4.jpg"
   },
   {
-    
     "title": "Der Fänger im Roggen",
     "author": "J.D. Salinger",
     "description": "Ein Coming-of-Age-Roman, der die Abenteuer von Holden Caulfield verfolgt, während er die Herausforderungen der Adoleszenz in New York City bewältigt.",
     "price": "11.99",
-    "category": "Romane",
-    "image": "/images/1.jpg"
+    "category": "romane",
+    "image": "/images/5.jpg"
   },
   {
-    
-    "title": "Kinderbuch 1",
-    "author": "Kinderbuchautor",
-    "description": "Eine spannende Geschichte für Kinder.",
+    "title": "Matilda",
+    "author": "Roald Dahl",
+    "description": "Matilda ist eine spannende Geschichte für Kinder, die die Abenteuer einer bemerkenswerten jungen Heldin namens Matilda Wormwood erzählt. Matilda ist ein hochbegabtes Mädchen, das ungeliebte Eltern und eine schreckliche Schuldirektorin hat. Trotz ihrer schwierigen Umstände entdeckt Matilda ihre außergewöhnlichen Fähigkeiten, darunter Telekinese, und setzt sie ein, um für Gerechtigkeit und Bildung einzutreten. Diese inspirierende Geschichte ermutigt Kinder, an sich selbst zu glauben und für das Gute einzustehen.",
     "price": "7.99",
-    "category": "Kinderbücher",
-    "image": "/images/1.jpg"
+    "category": "kinderbücher",
+    "image": "/images/6.jpg"
   },
   {
-    
-    "title": "Kinderbuch 2",
-    "author": "Kinderbuchautor",
-    "description": "Ein weiteres tolles Kinderbuch.",
+    "title": "Mollys wundersame Reise",
+    "author": "Anna Kupka",
+    "description": "Mollys wundersame Reise ist ein fesselndes Kinderbuch, das junge Leser auf ein aufregendes Abenteuer mitnimmt. Die Geschichte folgt Molly, einem neugierigen und mutigen Mädchen, das unerwartet in eine zauberhafte Welt voller Magie und Geheimnisse gezogen wird. Auf ihrer Reise begegnet Molly faszinierenden Kreaturen, löst knifflige Rätsel und erlebt unvergessliche Momente. Dieses Buch ist ein ideales Lesevergnügen für Kinder, die von fantastischen Abenteuern und der Kraft der Vorstellungskraft begeistert sind.",
+    "price": "7.99",
+    "category": "kinderbücher",
+    "image": "/images/11.jpg"
+  },
+  {
+    "title": "Charlotte's Web",
+    "author": "Stuart Little",
+    "description": "Charlotte's Web ist ein weiteres herausragendes Kinderbuch, das die Fantasie junger Leser beflügelt. Die Geschichte erzählt von Charlotte, einer klugen Spinne, und ihrem Freund Wilbur, einem liebenswerten Schwein. Gemeinsam schmieden sie einen außergewöhnlichen Plan, um Wilbur vor einem ungewissen Schicksal zu bewahren. Diese bewegende Geschichte über Freundschaft, Mitgefühl und die Wunder der Natur wird Kinder jeden Alters begeistern und berühren.",
     "price": "8.99",
-    "category": "Kinderbücher",
-    "image": "/images/1.jpg"
+    "category": "kinderbücher",
+    "image": "/images/7.jpg"
   },
   {
-    
-    "title": "Lehrbuch 1",
-    "author": "Lehrbuchautor",
-    "description": "Ein Lehrbuch für ein Fachgebiet.",
+    "title": "Schach Zug um Zug",
+    "author": "Helmut Pfleger",
+    "description": "Das offizielle Lehrbuch des Deutschen Schachbundes, damit Sie Schach spielen wie der Schachgroßmeister Helmut Pfleger oder Beth Harmon in Damengambit! Zur Vorbereitung auf Bauern-, Turm- und Königsdiplom. Vergnüglich und einfach, für Anfänger und Fortgeschrittene geeignet.",
     "price": "29.99",
-    "category": "Lehrbücher",
-    "image": "/images/1.jpg"
+    "category": "lehrbücher",
+    "image": "/images/8.jpg"
   },
+
   {
-    
-    "title": "Lehrbuch 2",
-    "author": "Lehrbuchautor",
-    "description": "Ein weiteres Lehrbuch für ein anderes Fachgebiet.",
+    "title": "Javascript",
+    "author": "Philip Ackermann",
+    "description": "JavaScript: Das umfassende Handbuch ist ein umfassendes Lehrbuch für JavaScript, das darauf abzielt, Lesern das umfassende Verständnis und die Anwendung von JavaScript beizubringen. Es deckt verschiedene Aspekte der Sprache ab, einschließlich objektorientierter und funktionaler Programmierung. Das Buch bietet eine gründliche Einführung in die JavaScript-Programmierung und vermittelt den Lesern die Fähigkeiten, JavaScript effektiv für Webentwicklung und andere Anwendungen einzusetzen.",
     "price": "24.99",
-    "category": "Lehrbücher",
-    "image": "/images/1.jpg"
+    "category": "lehrbücher",
+    "image": "/images/9.jpg"
   },
   {
-    
-    "title": "Kochbuch 1",
-    "author": "Kochbuchautor",
-    "description": "Eine Sammlung köstlicher Rezepte aus der internationalen Küche.",
+    "title": "Ab in die Küche",
+    "author": "Franz Keller",
+    "description": "Küchengott auf Kriegspfa: titelte Der Spiegel zum Erscheinen seines Bestsellers Vom Einfachen das Beste, in dem Franz Keller die Geschichte seines Lebens mit einer scharfen Kritik an der Landwirtschafts- und Nahrungsmittelindustrie verknüpfte. Jetzt legt er nach. Denn bei vielen Gesprächen mit seinen Lesern, mit Erzeugern und Medizinern hat er festgestellt: Die Bevölkerung ist bereit für eine Agrar- und Lebensmittelwende, doch die Politik wird in Deutschland und der EU von den starken Lobbyinteressen ausgebremst. In seinem neuen Buch erklärt er, wie man mit guten Rohstoffen und einfachen Mitteln gesund und lecker kocht. Viele Geschichten und Anekdoten aus seiner bewegten Zeit als Sternekoch würzen dieses Buch, auf das alle Fans schon warten.",
     "price": "19.95",
-    "category": "Kochbücher",
-    "image": "/images/1.jpg"
+    "category": "kochbücher",
+    "image": "/images/10.jpg"
   }
 ]
