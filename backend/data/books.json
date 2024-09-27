@@ -1,0 +1,93 @@
+
+[
+  {
+    
+    "title": "Der Große Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "Die Geschichte des rätselhaften Jay Gatsby und seiner leidenschaftlichen Obsession für die schöne Daisy Buchanan.",
+    "price": "15.99",
+    "category": "Romane",
+    "image": "/images/1.jpg"
+  },
+  {
+   
+    "title": "Wer die Nachtigall stört",
+    "author": "Harper Lee",
+    "description": "In der rassisch aufgeladenen Atmosphäre des amerikanischen Südens der 1930er Jahre untersucht dieser Roman Themen wie Rassismus und Gerechtigkeit aus der Sicht eines jungen Mädchens namens Scout Finch.",
+    "price": "12.49",
+    "category": "Romane",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "Ein dystopischer Roman, der die Konsequenzen von Totalitarismus, Zensur und Überwachung in einer düsteren Zukunftsgesellschaft erforscht.",
+    "price": "9.99",
+    "category": "Romane",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Stolz und Vorurteil",
+    "author": "Jane Austen",
+    "description": "Ein klassischer Roman, der die Themen Liebe, Klasse und gesellschaftliche Erwartungen im England des 19. Jahrhunderts erforscht.",
+    "price": "14.95",
+    "category": "Romane",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Der Fänger im Roggen",
+    "author": "J.D. Salinger",
+    "description": "Ein Coming-of-Age-Roman, der die Abenteuer von Holden Caulfield verfolgt, während er die Herausforderungen der Adoleszenz in New York City bewältigt.",
+    "price": "11.99",
+    "category": "Romane",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Kinderbuch 1",
+    "author": "Kinderbuchautor",
+    "description": "Eine spannende Geschichte für Kinder.",
+    "price": "7.99",
+    "category": "Kinderbücher",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Kinderbuch 2",
+    "author": "Kinderbuchautor",
+    "description": "Ein weiteres tolles Kinderbuch.",
+    "price": "8.99",
+    "category": "Kinderbücher",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Lehrbuch 1",
+    "author": "Lehrbuchautor",
+    "description": "Ein Lehrbuch für ein Fachgebiet.",
+    "price": "29.99",
+    "category": "Lehrbücher",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Lehrbuch 2",
+    "author": "Lehrbuchautor",
+    "description": "Ein weiteres Lehrbuch für ein anderes Fachgebiet.",
+    "price": "24.99",
+    "category": "Lehrbücher",
+    "image": "/images/1.jpg"
+  },
+  {
+    
+    "title": "Kochbuch 1",
+    "author": "Kochbuchautor",
+    "description": "Eine Sammlung köstlicher Rezepte aus der internationalen Küche.",
+    "price": "19.95",
+    "category": "Kochbücher",
+    "image": "/images/1.jpg"
+  }
+]
